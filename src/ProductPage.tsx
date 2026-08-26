@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
+import { getProductBySlug, products } from "./cms/products";
 
 const gallery = [
   ["Frontal", "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=2200&h=1500&fit=crop&auto=format", "Vista frontal da poltrona Mille"],
@@ -14,14 +16,17 @@ const gallery = [
 const highlights = [["Reclínio elétrico", "Um gesto preciso para encontrar a posição de pausa."], ["Encosto independente", "Apoio de costas e pernas ajustados com autonomia."], ["Apoio de cabeça", "Conforto contínuo, mesmo nas pausas mais longas."], ["USB-C integrado", "Energia discreta, sempre ao alcance."], ["Bateria opcional", "Liberdade para compor o ambiente sem cabos aparentes."], ["Base giratória", "Movimento sereno para acompanhar a casa."]];
 
 export default function ProductPage() {
+  const { slug } = useParams();
+  const product = getProductBySlug(slug) ?? products[0];
+  const productGallery = gallery.map((item, index) => index === 0 ? [item[0], product.image, `${product.name} — ${product.category}`] as const : item);
   const [active, setActive] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [material, setMaterial] = useState("Couro Nogueira");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => { const listener = () => setScrolled(window.scrollY > 12); listener(); window.addEventListener("scroll", listener, { passive: true }); return () => window.removeEventListener("scroll", listener); }, []);
-  const next = () => setActive((value) => (value + 1) % gallery.length);
-  const prev = () => setActive((value) => (value - 1 + gallery.length) % gallery.length);
+  const next = () => setActive((value) => (value + 1) % productGallery.length);
+  const prev = () => setActive((value) => (value - 1 + productGallery.length) % productGallery.length);
 
   return <main className="page-shell product-page">
     <header className={scrolled ? "minimal-header is-scrolled product-header" : "minimal-header product-header"}>
@@ -31,15 +36,15 @@ export default function ProductPage() {
       <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
     </header>
 
-    <section className="product-gallery" aria-label="Galeria da poltrona Mille">
-      <img src={gallery[active][1]} alt={gallery[active][2]} />
-      <div className="product-gallery-controls"><span>{String(active + 1).padStart(2, "0")} / {String(gallery.length).padStart(2, "0")}</span><p>{gallery[active][0]}</p><button type="button" onClick={prev} aria-label="Imagem anterior">←</button><button type="button" onClick={next} aria-label="Próxima imagem">→</button></div>
-      <div className="product-gallery-thumbs">{gallery.map(([label, image], index) => <button type="button" className={active === index ? "is-active" : ""} onClick={() => setActive(index)} key={label}><img src={image} alt="" /><span>{label}</span></button>)}</div>
+    <section className="product-gallery" aria-label={`Galeria de ${product.name}`}>
+      <img src={productGallery[active][1]} alt={productGallery[active][2]} />
+      <div className="product-gallery-controls"><span>{String(active + 1).padStart(2, "0")} / {String(productGallery.length).padStart(2, "0")}</span><p>{productGallery[active][0]}</p><button type="button" onClick={prev} aria-label="Imagem anterior">←</button><button type="button" onClick={next} aria-label="Próxima imagem">→</button></div>
+      <div className="product-gallery-thumbs">{productGallery.map(([label, image], index) => <button type="button" className={active === index ? "is-active" : ""} onClick={() => setActive(index)} key={label}><img src={image} alt="" /><span>{label}</span></button>)}</div>
     </section>
 
     <section className="product-overview" aria-labelledby="product-title">
       <div className="product-overview-intro">
-        <div><p className="editorial-eyebrow editorial-eyebrow--dark">Essence / Poltrona reclinável</p><h1 id="product-title">Mille</h1><p className="product-overview-lead">Conforto desenhado para acompanhar o ritmo de todos os dias.</p><p className="product-overview-copy">Mille combina tecnologia de conforto e proporções serenas em uma poltrona que se adapta naturalmente à vida contemporânea.</p><a className="editorial-action" href="#materiais">Ver acabamentos <span>↗</span></a></div>
+        <div><p className="editorial-eyebrow editorial-eyebrow--dark">{product.category} / Catálogo Tempus</p><h1 id="product-title">{product.name}</h1><p className="product-overview-lead">Conforto desenhado para acompanhar o ritmo de todos os dias.</p><p className="product-overview-copy">{product.name} integra a coleção {product.category} do catálogo ativo Tempus.</p><a className="editorial-action" href="#materiais">Ver acabamentos <span>↗</span></a></div>
       </div>
       <div className="product-overview-features"><p className="editorial-eyebrow editorial-eyebrow--dark">Design em uso / Recursos Mille</p><div>{highlights.map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div>
     </section>

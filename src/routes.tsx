@@ -15,7 +15,7 @@ import DesignSystemPage from "./DesignSystemPage";
 export const router = createBrowserRouter([
   { path: "/", Component: HomePage },
   { path: "/categorias/reclinaveis", Component: CategoryPage },
-  { path: "/produtos/mille", Component: ProductPage },
+  { path: "/produtos/:slug", Component: ProductPage },
   { path: "/sobre", Component: AboutPage },
   { path: "/blocos-3d", Component: BlocksLibraryPage },
   { path: "/representantes", Component: RepresentativesPage },
