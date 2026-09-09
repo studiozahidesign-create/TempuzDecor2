@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ImgHTMLAttributes } from "react";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
 import heroBanner from "./imports/ChatGPT_Image_9_09_2026__09_05_43.png";
+import { productCategories, products as cmsProducts } from "./cms/products";
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   fill?: boolean;
@@ -22,40 +23,13 @@ function Image({ fill, priority, style, onError, ...props }: ImageProps) {
   );
 }
 
-const products = [
-  { name: "Mille", collection: "Essence", image: "/images/mille.jpg", features: "Reclínio automático · Base giratória" },
-  { name: "Athenas", collection: "Living", image: "/images/athenas.png", features: "Conforto ergonômico · Design compacto" },
-  { name: "Amora", collection: "Lounge", image: "/images/amora.png", features: "Chaise extensível · Dois lugares" },
-];
-
-const collections = [
-  { number: "01", name: "Essence", description: "Conforto intuitivo para viver todos os dias.", image: "/images/mille.jpg" },
-  { number: "02", name: "Living", description: "Design leve para ambientes contemporâneos.", image: "/images/ayla.png" },
-  { number: "03", name: "Lounge", description: "Mais espaço para desacelerar.", image: "/images/amora.png" },
-  { number: "04", name: "Dreams", description: "Tecnologia dedicada ao descanso.", image: "/images/perola.png" },
-];
+const newReleases = cmsProducts.slice(0, 8).map((product) => ({ ...product, collection: product.category, alt: `${product.name} — ${product.category}` }));
 
 
-const newReleases = [
-  { name: "Mille", collection: "Essence", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=900&h=900&fit=crop&auto=format", alt: "Poltrona de madeira clara em fundo branco" },
-  { name: "Athenas", collection: "Living", image: "https://images.unsplash.com/photo-1612204186347-fef88cc864db?w=900&h=900&fit=crop&auto=format", alt: "Poltrona escura de couro com estrutura metálica" },
-  { name: "Amora", collection: "Lounge", image: "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=900&h=900&fit=crop&auto=format", alt: "Poltrona estofada em tom areia" },
-  { name: "Ayla", collection: "Living", image: "https://images.unsplash.com/photo-1554104707-a76b270e4bbb?w=900&h=900&fit=crop&auto=format", alt: "Cadeira metálica branca em fundo claro" },
-  { name: "Lina", collection: "Essence", image: "https://images.unsplash.com/photo-1554104683-c7063687d649?w=900&h=900&fit=crop&auto=format", alt: "Cadeira branca em fundo branco" },
-  { name: "Siena", collection: "Lounge", image: "https://images.unsplash.com/photo-1624345691006-e683ff409f3f?w=900&h=900&fit=crop&auto=format", alt: "Poltrona acolchoada escura" },
-  { name: "Nora", collection: "Dormitórios", image: "https://images.unsplash.com/photo-1648994517760-19afc8c7ba00?w=900&h=900&fit=crop&auto=format", alt: "Cadeira de madeira com tecido claro" },
-  { name: "Maya", collection: "Living", image: "https://images.unsplash.com/photo-1740154093925-ffb8e7ae526e?w=900&h=900&fit=crop&auto=format", alt: "Cadeira branca junto a uma parede clara" },
-];
-
-
-const collectionShowcase = [
-  { number: "01", name: "Poltronas reclináveis", description: "Movimento preciso para o descanso diário.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=1600&h=1100&fit=crop&auto=format", alt: "Poltrona reclinável em composição clara" },
-  { number: "02", name: "Living", description: "Peças para receber e permanecer.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1760072513367-55182245e76c?w=1600&h=1100&fit=crop&auto=format", alt: "Sala de estar contemporânea" },
-  { number: "03", name: "Dormitórios", description: "Acolhimento pensado para a noite.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&h=1100&fit=crop&auto=format", alt: "Quarto com cama e roupas de cama neutras" },
-  { number: "04", name: "Camas", description: "Presença, proporção e conforto.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?w=1600&h=1100&fit=crop&auto=format", alt: "Cama contemporânea em quarto amplo" },
-  { number: "05", name: "Colchões", description: "Suporte que acompanha o corpo.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1617098900591-3f90928e8c54?w=1600&h=1100&fit=crop&auto=format", alt: "Cama com roupa de cama clara" },
-  { number: "06", name: "Acessórios", description: "Detalhes que completam o ambiente.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1634148739177-775032f3feb1?w=1600&h=1100&fit=crop&auto=format", alt: "Objeto decorativo em ambiente minimalista" },
-];
+const collectionShowcase = productCategories.slice(0, 6).map((category, index) => {
+  const sample = cmsProducts.find((product) => product.categorySlug === category.slug);
+  return { number: String(index + 1).padStart(2, "0"), name: category.name, description: `${category.count} produtos no catálogo atual.`, href: "/categorias/reclinaveis", image: sample?.image ?? cmsProducts[0].image, alt: `Coleção ${category.name}` };
+});
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -138,7 +112,7 @@ export default function Home() {
         <div className="brand-product-carousel">
           <div className="brand-product-carousel-top"><p className="editorial-eyebrow editorial-eyebrow--dark">Novidades Tempus</p><div className="carousel-controls" aria-label="Navegação dos lançamentos"><span>{String(carouselPage).padStart(2, "0")} / 08</span><button type="button" onClick={() => scrollReleases(-1)} aria-label="Produto anterior">←</button><button type="button" onClick={() => scrollReleases(1)} aria-label="Próximo produto">→</button></div></div>
           <div className="release-showcase-rail" ref={releaseRailRef} onScroll={updateCarouselPage}>
-            {newReleases.map((product) => <a className="release-showcase-slide" href="/produtos/mille" key={product.name}><div className="release-showcase-image"><img src={product.image} alt={product.alt} /></div><div className="release-showcase-caption"><p>{product.collection}</p><h3>{product.name}</h3><span>Explorar produto →</span></div></a>)}
+            {newReleases.map((product) => <a className="release-showcase-slide" href={`/produtos/${product.slug}`} key={product.id}><div className="release-showcase-image"><img src={product.image} alt={product.alt} /></div><div className="release-showcase-caption"><p>{product.collection}</p><h3>{product.name}</h3><span>Explorar produto →</span></div></a>)}
           </div>
         </div>
       </section>
