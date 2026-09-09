@@ -37,14 +37,14 @@ const collections = [
 
 
 const newReleases = [
-  { name: "Mille", collection: "Essence", image: "/images/products/5841-mille-3-2.jpg", alt: "Poltrona de madeira clara em fundo branco" },
-  { name: "Athenas", collection: "Living", image: "/images/products/7041-athenas.png", alt: "Poltrona escura de couro com estrutura metálica" },
-  { name: "Amora", collection: "Lounge", image: "/images/products/7187-amora.png", alt: "Poltrona estofada em tom areia" },
-  { name: "Ayla", collection: "Living", image: "/images/products/7400-ayla.png", alt: "Cadeira metálica branca em fundo claro" },
-  { name: "Lina", collection: "Essence", image: "/images/products/6639-donna.webp", alt: "Cadeira branca em fundo branco" },
-  { name: "Siena", collection: "Lounge", image: "/images/products/7398-sila.png", alt: "Poltrona acolchoada escura" },
-  { name: "Nora", collection: "Dormitórios", image: "/images/products/6379-aurora.png", alt: "Cadeira de madeira com tecido claro" },
-  { name: "Maya", collection: "Living", image: "/images/products/7032-maya-cor-granizo.png", alt: "Cadeira branca junto a uma parede clara" },
+  { name: "Mille", slug: "mille-3-2", collection: "Fulltech", image: "/images/products/5841-mille-3-2.jpg", alt: "Poltrona Mille Tempus Decor" },
+  { name: "Athenas", slug: "athenas", collection: "Poltronas Complementos", image: "/images/products/7041-athenas.png", alt: "Poltrona Athenas Tempus Decor" },
+  { name: "Amora", slug: "amora", collection: "Poltronas Complementos", image: "/images/products/7187-amora.png", alt: "Poltrona Amora Tempus Decor" },
+  { name: "Ayla", slug: "ayla", collection: "Poltronas Complementos", image: "/images/products/7400-ayla.png", alt: "Poltrona Ayla Tempus Decor" },
+  { name: "Donna", slug: "donna", collection: "Poltronas Complementos", image: "/images/products/6639-donna.webp", alt: "Poltrona Donna Tempus Decor" },
+  { name: "Sila", slug: "sila", collection: "Poltronas Complementos", image: "/images/products/7398-sila.png", alt: "Poltrona Sila Tempus Decor" },
+  { name: "Aurora", slug: "aurora", collection: "Cama", image: "/images/products/6379-aurora.png", alt: "Cama Aurora Tempus Decor" },
+  { name: "Maya", slug: "maya-cor-granizo", collection: "Fulltech", image: "/images/products/7032-maya-cor-granizo.png", alt: "Poltrona Maya Tempus Decor" },
 ];
 
 
@@ -138,7 +138,7 @@ export default function Home() {
         <div className="brand-product-carousel">
           <div className="brand-product-carousel-top"><p className="editorial-eyebrow editorial-eyebrow--dark">Novidades Tempus</p><div className="carousel-controls" aria-label="Navegação dos lançamentos"><span>{String(carouselPage).padStart(2, "0")} / 08</span><button type="button" onClick={() => scrollReleases(-1)} aria-label="Produto anterior">←</button><button type="button" onClick={() => scrollReleases(1)} aria-label="Próximo produto">→</button></div></div>
           <div className="release-showcase-rail" ref={releaseRailRef} onScroll={updateCarouselPage}>
-            {newReleases.map((product) => <a className="release-showcase-slide" href="/produtos/mille" key={product.name}><div className="release-showcase-image"><img src={product.image} alt={product.alt} /></div><div className="release-showcase-caption"><p>{product.collection}</p><h3>{product.name}</h3><span>Explorar produto →</span></div></a>)}
+            {newReleases.map((product) => <a className="release-showcase-slide" href={`https://tempusdecor.com.br/catalogos/${product.slug}/`} key={product.slug}><div className="release-showcase-image"><img src={product.image} alt={product.alt} /></div><div className="release-showcase-caption"><p>{product.collection}</p><h3>{product.name}</h3><span>Explorar produto →</span></div></a>)}
           </div>
         </div>
       </section>
