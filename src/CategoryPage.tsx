@@ -5,23 +5,23 @@ import SiteFooter from "./SiteFooter";
 type Product = { name: string; collection: string; type: string; image: string; technology?: string };
 
 const collections = [
-  ["Essence", "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=360&h=220&fit=crop&auto=format"],
-  ["Living", "https://images.unsplash.com/photo-1612204186347-fef88cc864db?w=360&h=220&fit=crop&auto=format"],
-  ["Dreams", "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=360&h=220&fit=crop&auto=format"],
-  ["Maya", "https://images.unsplash.com/photo-1554104683-c7063687d649?w=360&h=220&fit=crop&auto=format"],
-  ["Office", "https://images.unsplash.com/photo-1624345691006-e683ff409f3f?w=360&h=220&fit=crop&auto=format"],
-  ["Premium", "https://images.unsplash.com/photo-1648994517760-19afc8c7ba00?w=360&h=220&fit=crop&auto=format"],
+  ["Essence", "/images/products/5841-mille-3-2.jpg"],
+  ["Living", "/images/products/7041-athenas.png"],
+  ["Dreams", "/images/products/7187-amora.png"],
+  ["Maya", "/images/products/6379-aurora.png"],
+  ["Office", "/images/products/7398-sila.png"],
+  ["Premium", "/images/products/6379-aurora.png"],
 ] as const;
 
 const products: Product[] = [
-  { name: "Mille", collection: "Essence", type: "Reclinável", technology: "Reclínio elétrico", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=1000&h=900&fit=crop&auto=format" },
-  { name: "Athenas", collection: "Living", type: "Poltrona", technology: "Base giratória", image: "https://images.unsplash.com/photo-1612204186347-fef88cc864db?w=1000&h=900&fit=crop&auto=format" },
-  { name: "Amora", collection: "Dreams", type: "Reclinável", technology: "Apoio lombar", image: "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=1000&h=900&fit=crop&auto=format" },
-  { name: "Ayla", collection: "Maya", type: "Poltrona", technology: "Design compacto", image: "https://images.unsplash.com/photo-1554104707-a76b270e4bbb?w=1000&h=900&fit=crop&auto=format" },
-  { name: "Nora", collection: "Office", type: "Poltrona", technology: "Suporte ergonômico", image: "https://images.unsplash.com/photo-1624345691006-e683ff409f3f?w=1000&h=900&fit=crop&auto=format" },
-  { name: "Maya", collection: "Premium", type: "Reclinável", technology: "Mecanismo silencioso", image: "https://images.unsplash.com/photo-1740154093925-ffb8e7ae526e?w=1000&h=900&fit=crop&auto=format" },
-  { name: "Lina", collection: "Essence", type: "Poltrona", technology: "Base em madeira", image: "https://images.unsplash.com/photo-1554104683-c7063687d649?w=1000&h=900&fit=crop&auto=format" },
-  { name: "Siena", collection: "Living", type: "Reclinável", technology: "Conforto progressivo", image: "https://images.unsplash.com/photo-1648994517760-19afc8c7ba00?w=1000&h=900&fit=crop&auto=format" },
+  { name: "Mille", collection: "Essence", type: "Reclinável", technology: "Reclínio elétrico", image: "/images/products/5841-mille-3-2.jpg" },
+  { name: "Athenas", collection: "Living", type: "Poltrona", technology: "Base giratória", image: "/images/products/7041-athenas.png" },
+  { name: "Amora", collection: "Dreams", type: "Reclinável", technology: "Apoio lombar", image: "/images/products/7187-amora.png" },
+  { name: "Ayla", collection: "Maya", type: "Poltrona", technology: "Design compacto", image: "/images/products/7400-ayla.png" },
+  { name: "Nora", collection: "Office", type: "Poltrona", technology: "Suporte ergonômico", image: "/images/products/7398-sila.png" },
+  { name: "Maya", collection: "Premium", type: "Reclinável", technology: "Mecanismo silencioso", image: "/images/products/7032-maya-cor-granizo.png" },
+  { name: "Lina", collection: "Essence", type: "Poltrona", technology: "Base em madeira", image: "/images/products/6371-sophi-taupe.png" },
+  { name: "Siena", collection: "Living", type: "Reclinável", technology: "Conforto progressivo", image: "/images/products/6379-aurora.png" },
 ];
 
 const filterLabels = ["Coleção", "Tipo de produto", "Ambiente", "Tecnologia", "Revestimento", "Material", "Cor", "Designer", "Disponibilidade", "Ordenar por"];
@@ -52,7 +52,7 @@ export default function CategoryPage() {
 
     <section className="catalog-hero" aria-labelledby="category-title">
       <div className="catalog-hero-copy"><p className="editorial-eyebrow editorial-eyebrow--dark">Coleção / Tempus</p><h1 id="category-title">Poltronas<br /><em>reclináveis.</em></h1><p>Conforto desenvolvido para o cotidiano. Tecnologia, ergonomia e estética atemporal em uma coleção feita para permanecer.</p><span>24 modelos disponíveis</span></div>
-      <div className="catalog-hero-image"><img src="https://images.unsplash.com/photo-1760072513367-55182245e76c?w=1900&h=1300&fit=crop&auto=format" alt="Sala contemporânea com poltronas e luz natural" /></div>
+      <div className="catalog-hero-image"><img src="/images/products/7177-allegra.png" alt="Sala contemporânea com poltronas e luz natural" /></div>
     </section>
 
     <section className="catalog-collections" aria-label="Coleções de reclináveis"><div className="catalog-collection-rail">{collections.map(([name, image]) => <button type="button" className={collection === name ? "is-active" : ""} onClick={() => { setCollection(name); setPage(1); }} key={name}><img src={image} alt="" /><span>{name}</span></button>)}</div></section>
@@ -69,7 +69,7 @@ export default function CategoryPage() {
       <nav className="catalog-pagination" aria-label="Paginação">{[1, 2, 3, 4].map((number) => <button type="button" className={page === number ? "is-active" : ""} onClick={() => setPage(number)} key={number}>{String(number).padStart(2, "0")}</button>)}</nav>
     </section>
 
-    <section className="related-categories" aria-labelledby="related-title"><header><p className="editorial-eyebrow editorial-eyebrow--dark">Descubra também</p><h2 id="related-title">Outras maneiras de<br /><em>habitar o conforto.</em></h2></header><div>{[["Sofás", "https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=900&h=900&fit=crop&auto=format"], ["Camas", "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&h=900&fit=crop&auto=format"], ["Colchões", "https://images.unsplash.com/photo-1617098900591-3f90928e8c54?w=900&h=900&fit=crop&auto=format"], ["Acessórios", "https://images.unsplash.com/photo-1634148739177-775032f3feb1?w=900&h=900&fit=crop&auto=format"]].map(([name, image]) => <a href="/categorias/reclinaveis" key={name}><img src={image} alt={`${name} Tempus`} /><span>{name}</span><b>↗</b></a>)}</div></section>
+    <section className="related-categories" aria-labelledby="related-title"><header><p className="editorial-eyebrow editorial-eyebrow--dark">Descubra também</p><h2 id="related-title">Outras maneiras de<br /><em>habitar o conforto.</em></h2></header><div>{[["Sofás", "/images/products/7358-emilia.png"], ["Camas", "/images/products/5777-cama-julia.webp"], ["Colchões", "/images/products/7394-martina.png"], ["Acessórios", "/images/products/6388-olivia.png"]].map(([name, image]) => <a href="/categorias/reclinaveis" key={name}><img src={image} alt={`${name} Tempus`} /><span>{name}</span><b>↗</b></a>)}</div></section>
     <SiteFooter />
   </main>;
 }

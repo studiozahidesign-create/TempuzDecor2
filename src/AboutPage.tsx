@@ -4,10 +4,10 @@ import SiteFooter from "./SiteFooter";
 
 // Replace these records with the official employee roster whenever it is available.
 const teamMembers = [
-  { name: "Nome do profissional", role: "Função / área", image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&h=1500&fit=crop&auto=format" },
-  { name: "Nome do profissional", role: "Função / área", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200&h=1500&fit=crop&auto=format" },
-  { name: "Nome do profissional", role: "Função / área", image: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1200&h=1500&fit=crop&auto=format" },
-  { name: "Nome do profissional", role: "Função / área", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&h=1500&fit=crop&auto=format" },
+  { name: "Nome do profissional", role: "Função / área", image: "/images/products/5841-mille-3-2.jpg" },
+  { name: "Nome do profissional", role: "Função / área", image: "/images/products/7041-athenas.png" },
+  { name: "Nome do profissional", role: "Função / área", image: "/images/products/7187-amora.png" },
+  { name: "Nome do profissional", role: "Função / área", image: "/images/products/7400-ayla.png" },
 ];
 
 const companyNumbers = [
@@ -19,12 +19,12 @@ const companyNumbers = [
 
 // Replace placeholder names and portraits with official leadership data; the carousel adapts automatically.
 const leadershipTeam = [
-  { order: 1, name: "Nome do executivo", position: "CEO", portrait: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1400&h=1800&fit=crop&auto=format", short_bio: "Responsável pela direção estratégica da empresa e pelos novos caminhos da Tempus." },
-  { order: 2, name: "Nome do executivo", position: "COO", portrait: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1400&h=1800&fit=crop&auto=format", short_bio: "Responsável por conectar operação, processos e a experiência entregue pela empresa." },
-  { order: 3, name: "Nome do executivo", position: "CFO", portrait: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1400&h=1800&fit=crop&auto=format", short_bio: "Conduz o planejamento financeiro que sustenta a evolução responsável da Tempus." },
-  { order: 4, name: "Nome do executivo", position: "Direção Comercial", portrait: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1400&h=1800&fit=crop&auto=format", short_bio: "Constrói relações de longo prazo com representantes, parceiros e mercados." },
-  { order: 5, name: "Nome do executivo", position: "Direção de Operações", portrait: "https://images.unsplash.com/photo-1565688534245-05d6b5be184a?w=1400&h=1800&fit=crop&auto=format", short_bio: "Transforma visão em uma operação precisa, atenta e continuamente preparada." },
-  { order: 6, name: "Nome do executivo", position: "Direção de Marketing", portrait: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1400&h=1800&fit=crop&auto=format", short_bio: "Cuida da presença da Tempus e da maneira como a marca se aproxima das pessoas." },
+  { order: 1, name: "Nome do executivo", position: "CEO", portrait: "/images/products/7032-maya-cor-granizo.png", short_bio: "Responsável pela direção estratégica da empresa e pelos novos caminhos da Tempus." },
+  { order: 2, name: "Nome do executivo", position: "COO", portrait: "/images/products/6629-perola.webp", short_bio: "Responsável por conectar operação, processos e a experiência entregue pela empresa." },
+  { order: 3, name: "Nome do executivo", position: "CFO", portrait: "/images/products/6379-aurora.png", short_bio: "Conduz o planejamento financeiro que sustenta a evolução responsável da Tempus." },
+  { order: 4, name: "Nome do executivo", position: "Direção Comercial", portrait: "/images/products/6371-sophi-taupe.png", short_bio: "Constrói relações de longo prazo com representantes, parceiros e mercados." },
+  { order: 5, name: "Nome do executivo", position: "Direção de Operações", portrait: "/images/products/7177-allegra.png", short_bio: "Transforma visão em uma operação precisa, atenta e continuamente preparada." },
+  { order: 6, name: "Nome do executivo", position: "Direção de Marketing", portrait: "/images/products/7358-emilia.png", short_bio: "Cuida da presença da Tempus e da maneira como a marca se aproxima das pessoas." },
 ];
 
 export default function AboutPage() {
@@ -69,9 +69,9 @@ export default function AboutPage() {
         <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
       </header>
 
-      <section className="simple-about-hero" aria-labelledby="about-title"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=2400&h=1500&fit=crop&auto=format" alt="Espaço de trabalho contemporâneo com luz natural" /><div /><div className="simple-about-hero-copy"><p className="editorial-eyebrow">Tempus</p><h1 id="about-title">Sobre a <em>Tempus.</em></h1><p>Uma empresa construída em torno do conforto, do design e da evolução.</p></div></section>
+      <section className="simple-about-hero" aria-labelledby="about-title"><img src="/images/products/7394-martina.png" alt="Espaço de trabalho contemporâneo com luz natural" /><div /><div className="simple-about-hero-copy"><p className="editorial-eyebrow">Tempus</p><h1 id="about-title">Sobre a <em>Tempus.</em></h1><p>Uma empresa construída em torno do conforto, do design e da evolução.</p></div></section>
 
-      <section className="simple-about-intro" aria-labelledby="intro-title"><div><p className="editorial-number">01 / Sobre a Tempus</p><h2 id="intro-title">Somos a <em>Tempus.</em></h2><p>A Tempus atua no desenvolvimento, produção e distribuição de soluções para conforto, construindo ao longo dos anos uma presença baseada em qualidade, experiência e relações de longo prazo.</p><p>Mais do que acompanhar o mercado, buscamos entender como as pessoas vivem, trabalham e ocupam seus espaços para continuar evoluindo.</p></div><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?w=1800&h=1600&fit=crop&auto=format" alt="Pessoas reunidas em um ambiente de trabalho contemporâneo" /></section>
+      <section className="simple-about-intro" aria-labelledby="intro-title"><div><p className="editorial-number">01 / Sobre a Tempus</p><h2 id="intro-title">Somos a <em>Tempus.</em></h2><p>A Tempus atua no desenvolvimento, produção e distribuição de soluções para conforto, construindo ao longo dos anos uma presença baseada em qualidade, experiência e relações de longo prazo.</p><p>Mais do que acompanhar o mercado, buscamos entender como as pessoas vivem, trabalham e ocupam seus espaços para continuar evoluindo.</p></div><img src="/images/products/6388-olivia.png" alt="Pessoas reunidas em um ambiente de trabalho contemporâneo" /></section>
 
       <section className="simple-about-numbers" id="numeros" aria-labelledby="numbers-title"><header><p className="editorial-eyebrow editorial-eyebrow--dark">02 / Em números</p><h2 id="numbers-title">Uma presença que se constrói no <em>tempo.</em></h2><p>Os indicadores oficiais serão atualizados aqui conforme a evolução da empresa.</p></header><div>{companyNumbers.map(([number, label]) => <article key={label}><strong>{number}</strong><span>{label}</span></article>)}</div></section>
 
@@ -86,9 +86,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="simple-about-presence" id="presenca" aria-labelledby="presence-title"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2400&h=1500&fit=crop&auto=format" alt="Arquitetura corporativa contemporânea" /><div><p className="editorial-eyebrow">04 / Presença</p><h2 id="presence-title">Presença que <em>aproxima.</em></h2><p>Uma rede de representantes e parceiros que leva a Tempus a diferentes regiões e aproxima a marca de profissionais, lojas e clientes.</p><a className="editorial-action editorial-action--light" href="https://wa.me/" target="_blank" rel="noreferrer">Encontrar representante <span>↗</span></a></div></section>
+      <section className="simple-about-presence" id="presenca" aria-labelledby="presence-title"><img src="/images/products/6609-elena.png" alt="Arquitetura corporativa contemporânea" /><div><p className="editorial-eyebrow">04 / Presença</p><h2 id="presence-title">Presença que <em>aproxima.</em></h2><p>Uma rede de representantes e parceiros que leva a Tempus a diferentes regiões e aproxima a marca de profissionais, lojas e clientes.</p><a className="editorial-action editorial-action--light" href="https://wa.me/" target="_blank" rel="noreferrer">Encontrar representante <span>↗</span></a></div></section>
 
-      <section className="simple-about-closing" aria-labelledby="closing-title"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2400&h=1500&fit=crop&auto=format" alt="Interior contemporâneo com mobiliário e luz natural" /><div><p className="editorial-eyebrow">Tempus</p><h2 id="closing-title">Continuamos em <em>movimento.</em></h2><p>Evoluindo a empresa, as relações e a maneira como construímos conforto para o futuro.</p><a className="editorial-action editorial-action--light" href="/categorias/reclinaveis">Conheça nossos produtos <span>↗</span></a></div></section>
+      <section className="simple-about-closing" aria-labelledby="closing-title"><img src="/images/products/6639-donna.webp" alt="Interior contemporâneo com mobiliário e luz natural" /><div><p className="editorial-eyebrow">Tempus</p><h2 id="closing-title">Continuamos em <em>movimento.</em></h2><p>Evoluindo a empresa, as relações e a maneira como construímos conforto para o futuro.</p><a className="editorial-action editorial-action--light" href="/categorias/reclinaveis">Conheça nossos produtos <span>↗</span></a></div></section>
       <SiteFooter />
     </main>
   );

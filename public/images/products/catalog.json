@@ -1,0 +1,525 @@
+{
+  "source": "https://tempusdecor.com.br",
+  "products": [
+    {
+      "id": 7400,
+      "slug": "ayla",
+      "name": "AYLA",
+      "category": "Poltronas Complementos",
+      "image": "/images/products/7400-ayla.png",
+      "source": "https://tempusdecor.com.br/catalogos/ayla/"
+    },
+    {
+      "id": 7398,
+      "slug": "sila",
+      "name": "SILA",
+      "category": "Poltronas Complementos",
+      "image": "/images/products/7398-sila.png",
+      "source": "https://tempusdecor.com.br/catalogos/sila/"
+    },
+    {
+      "id": 7396,
+      "slug": "samia",
+      "name": "SAMIA",
+      "category": "Poltronas Complementos",
+      "image": "/images/products/7396-samia.png",
+      "source": "https://tempusdecor.com.br/catalogos/samia/"
+    },
+    {
+      "id": 7394,
+      "slug": "martina",
+      "name": "MARTINA",
+      "category": "Duotech",
+      "image": "/images/products/7394-martina.png",
+      "source": "https://tempusdecor.com.br/catalogos/martina/"
+    },
+    {
+      "id": 7358,
+      "slug": "emilia",
+      "name": "EMILIA",
+      "category": "Duotech",
+      "image": "/images/products/7358-emilia.png",
+      "source": "https://tempusdecor.com.br/catalogos/emilia/"
+    },
+    {
+      "id": 7346,
+      "slug": "ada-2",
+      "name": "ADA",
+      "category": "Tempus Office",
+      "image": "/images/products/7346-ada-2.png",
+      "source": "https://tempusdecor.com.br/catalogos/ada-2/"
+    },
+    {
+      "id": 7167,
+      "slug": "ada",
+      "name": "ADA",
+      "category": "Tempus Office",
+      "image": "/images/products/7167-ada.png",
+      "source": "https://tempusdecor.com.br/catalogos/ada/"
+    },
+    {
+      "id": 7032,
+      "slug": "maya-cor-granizo",
+      "name": "MAYA",
+      "category": "Fulltech",
+      "image": "/images/products/7032-maya-cor-granizo.png",
+      "source": "https://tempusdecor.com.br/catalogos/maya-cor-granizo/"
+    },
+    {
+      "id": 6379,
+      "slug": "aurora",
+      "name": "AURORA",
+      "category": "Cama",
+      "image": "/images/products/6379-aurora.png",
+      "source": "https://tempusdecor.com.br/catalogos/aurora/"
+    },
+    {
+      "id": 6629,
+      "slug": "perola",
+      "name": "PEROLA",
+      "category": "Cama",
+      "image": "/images/products/6629-perola.webp",
+      "source": "https://tempusdecor.com.br/catalogos/perola/"
+    },
+    {
+      "id": 6388,
+      "slug": "olivia",
+      "name": "Olivia",
+      "category": "Cama",
+      "image": "/images/products/6388-olivia.png",
+      "source": "https://tempusdecor.com.br/catalogos/olivia/"
+    },
+    {
+      "id": 5810,
+      "slug": "evita",
+      "name": "EVITA",
+      "category": "Fulltech",
+      "image": "/images/products/5810-evita.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/evita/"
+    },
+    {
+      "id": 5815,
+      "slug": "gracia",
+      "name": "GRACIA",
+      "category": "Fulltech",
+      "image": "/images/products/5815-gracia.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/gracia/"
+    },
+    {
+      "id": 6371,
+      "slug": "sophi-taupe",
+      "name": "Sophi",
+      "category": "Fulltech",
+      "image": "/images/products/6371-sophi-taupe.png",
+      "source": "https://tempusdecor.com.br/catalogos/sophi-taupe/"
+    },
+    {
+      "id": 4634,
+      "slug": "lys",
+      "name": "LYS",
+      "category": "Fulltech",
+      "image": "/images/products/4634-lys.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/lys/"
+    },
+    {
+      "id": 3465,
+      "slug": "lille-2",
+      "name": "LILLE",
+      "category": "Fulltech",
+      "image": "/images/products/3465-lille-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/lille-2/"
+    },
+    {
+      "id": 3398,
+      "slug": "3398-2",
+      "name": "LARA",
+      "category": "Fulltech",
+      "image": "/images/products/3398-3398-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/3398-2/"
+    },
+    {
+      "id": 3397,
+      "slug": "lara",
+      "name": "LARA",
+      "category": "Fulltech",
+      "image": "/images/products/3397-lara.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/lara/"
+    },
+    {
+      "id": 5964,
+      "slug": "jessy-wisky-2",
+      "name": "JESSY",
+      "category": "Fulltech",
+      "image": "/images/products/5964-jessy-wisky-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/jessy-wisky-2/"
+    },
+    {
+      "id": 5841,
+      "slug": "mille-3-2",
+      "name": "MILLE",
+      "category": "Fulltech",
+      "image": "/images/products/5841-mille-3-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/mille-3-2/"
+    },
+    {
+      "id": 5864,
+      "slug": "tess",
+      "name": "TESS",
+      "category": "Tempus Office",
+      "image": "/images/products/5864-tess.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/tess/"
+    },
+    {
+      "id": 5820,
+      "slug": "jade",
+      "name": "JADE",
+      "category": "Fulltech",
+      "image": "/images/products/5820-jade.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/jade/"
+    },
+    {
+      "id": 3750,
+      "slug": "coralina-taupe",
+      "name": "CORALINA",
+      "category": "Duotech",
+      "image": "/images/products/3750-coralina-taupe.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/coralina-taupe/"
+    },
+    {
+      "id": 6305,
+      "slug": "creta-2",
+      "name": "Office Creta Preta",
+      "category": "Tempus Office",
+      "image": "/images/products/6305-creta-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/creta-2/"
+    },
+    {
+      "id": 6060,
+      "slug": "creta",
+      "name": "Office Creta Cinza",
+      "category": "Tempus Office",
+      "image": "/images/products/6060-creta.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/creta/"
+    },
+    {
+      "id": 3482,
+      "slug": "corriente-lifting",
+      "name": "CORRIENTES LIFTING",
+      "category": "Duotech",
+      "image": "/images/products/3482-corriente-lifting.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/corriente-lifting/"
+    },
+    {
+      "id": 3480,
+      "slug": "iris",
+      "name": "IRIS",
+      "category": "Duotech",
+      "image": "/images/products/3480-iris.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/iris/"
+    },
+    {
+      "id": 6285,
+      "slug": "rodes-2",
+      "name": "Office Rodes Cinza",
+      "category": "Tempus Office",
+      "image": "/images/products/6285-rodes-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/rodes-2/"
+    },
+    {
+      "id": 6084,
+      "slug": "rodes",
+      "name": "Office Rodes Preta",
+      "category": "Tempus Office",
+      "image": "/images/products/6084-rodes.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/rodes/"
+    },
+    {
+      "id": 6639,
+      "slug": "donna",
+      "name": "DONNA",
+      "category": "Duotech",
+      "image": "/images/products/6639-donna.webp",
+      "source": "https://tempusdecor.com.br/catalogos/donna/"
+    },
+    {
+      "id": 6609,
+      "slug": "elena",
+      "name": "ELENA",
+      "category": "Duotech",
+      "image": "/images/products/6609-elena.png",
+      "source": "https://tempusdecor.com.br/catalogos/elena/"
+    },
+    {
+      "id": 6069,
+      "slug": "mikonos",
+      "name": "Office Mikonos Cinza",
+      "category": "Tempus Office",
+      "image": "/images/products/6069-mikonos.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/mikonos/"
+    },
+    {
+      "id": 6312,
+      "slug": "mikonos-2",
+      "name": "Office Mikonos Preta",
+      "category": "Tempus Office",
+      "image": "/images/products/6312-mikonos-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/mikonos-2/"
+    },
+    {
+      "id": 6272,
+      "slug": "zoe-2",
+      "name": "ZOE",
+      "category": "Duotech",
+      "image": "/images/products/6272-zoe-2.png",
+      "source": "https://tempusdecor.com.br/catalogos/zoe-2/"
+    },
+    {
+      "id": 6091,
+      "slug": "santorini",
+      "name": "Office Santorini Cinza",
+      "category": "Tempus Office",
+      "image": "/images/products/6091-santorini.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/santorini/"
+    },
+    {
+      "id": 5836,
+      "slug": "maria",
+      "name": "MARIA",
+      "category": "Duotech",
+      "image": "/images/products/5836-maria.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/maria/"
+    },
+    {
+      "id": 6360,
+      "slug": "vega-taupe",
+      "name": "Vega",
+      "category": "Unitech",
+      "image": "/images/products/6360-vega-taupe.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/vega-taupe/"
+    },
+    {
+      "id": 6292,
+      "slug": "santorini-2",
+      "name": "Office Santorini Preta",
+      "category": "Tempus Office",
+      "image": "/images/products/6292-santorini-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/santorini-2/"
+    },
+    {
+      "id": 6318,
+      "slug": "naxos-2",
+      "name": "Office Naxos Cinza",
+      "category": "Tempus Office",
+      "image": "/images/products/6318-naxos-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/naxos-2/"
+    },
+    {
+      "id": 5771,
+      "slug": "blanca",
+      "name": "BLANCA",
+      "category": "Multitech",
+      "image": "/images/products/5771-blanca.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/blanca/"
+    },
+    {
+      "id": 5832,
+      "slug": "lola",
+      "name": "LOLA",
+      "category": "Multitech",
+      "image": "/images/products/5832-lola.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/lola/"
+    },
+    {
+      "id": 6076,
+      "slug": "naxos",
+      "name": "Office Naxos Preta",
+      "category": "Tempus Office",
+      "image": "/images/products/6076-naxos.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/naxos/"
+    },
+    {
+      "id": 6593,
+      "slug": "alba",
+      "name": "ALBA",
+      "category": "Multitech",
+      "image": "/images/products/6593-alba.png",
+      "source": "https://tempusdecor.com.br/catalogos/alba/"
+    },
+    {
+      "id": 3459,
+      "slug": "bella-2",
+      "name": "BELLA",
+      "category": "Multitech",
+      "image": "/images/products/3459-bella-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/bella-2/"
+    },
+    {
+      "id": 3448,
+      "slug": "mely",
+      "name": "MELY",
+      "category": "Multitech",
+      "image": "/images/products/3448-mely.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/mely/"
+    },
+    {
+      "id": 3462,
+      "slug": "kira-2",
+      "name": "KIRA",
+      "category": "Multitech",
+      "image": "/images/products/3462-kira-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/kira-2/"
+    },
+    {
+      "id": 3735,
+      "slug": "coral-nude-2",
+      "name": "CORAL",
+      "category": "Multitech",
+      "image": "/images/products/3735-coral-nude-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/coral-nude-2/"
+    },
+    {
+      "id": 5759,
+      "slug": "benita",
+      "name": "BENITA",
+      "category": "Fulltech",
+      "image": "/images/products/5759-benita.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/benita/"
+    },
+    {
+      "id": 3476,
+      "slug": "zara-2",
+      "name": "ZARA",
+      "category": "Duotech",
+      "image": "/images/products/3476-zara-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/zara-2/"
+    },
+    {
+      "id": 3474,
+      "slug": "zara",
+      "name": "ZARA",
+      "category": "Duotech",
+      "image": "/images/products/3474-zara.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/zara/"
+    },
+    {
+      "id": 5985,
+      "slug": "catalina-2-2",
+      "name": "CATALINA",
+      "category": "Duotech",
+      "image": "/images/products/5985-catalina-2-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/catalina-2-2/"
+    },
+    {
+      "id": 3478,
+      "slug": "cine-2",
+      "name": "CINE",
+      "category": "Fulltech",
+      "image": "/images/products/3478-cine-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/cine-2/"
+    },
+    {
+      "id": 3477,
+      "slug": "cine",
+      "name": "CINE",
+      "category": "Fulltech",
+      "image": "/images/products/3477-cine.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/cine/"
+    },
+    {
+      "id": 5784,
+      "slug": "carmen",
+      "name": "CARMEN",
+      "category": "Duotech",
+      "image": "/images/products/5784-carmen.png",
+      "source": "https://tempusdecor.com.br/catalogos/carmen/"
+    },
+    {
+      "id": 7177,
+      "slug": "allegra",
+      "name": "ALLEGRA",
+      "category": "Duotech",
+      "image": "/images/products/7177-allegra.png",
+      "source": "https://tempusdecor.com.br/catalogos/allegra/"
+    },
+    {
+      "id": 3874,
+      "slug": "lavalle-taupe",
+      "name": "LAVALLE",
+      "category": "Unitech",
+      "image": "/images/products/3874-lavalle-taupe.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/lavalle-taupe/"
+    },
+    {
+      "id": 3470,
+      "slug": "lavalle-2",
+      "name": "LAVALLE",
+      "category": "Unitech",
+      "image": "/images/products/3470-lavalle-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/lavalle-2/"
+    },
+    {
+      "id": 3467,
+      "slug": "luna-3",
+      "name": "LUNA",
+      "category": "Unitech",
+      "image": "/images/products/3467-luna-3.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/luna-3/"
+    },
+    {
+      "id": 3468,
+      "slug": "san-martin-2",
+      "name": "SAN MARTIM",
+      "category": "Unitech",
+      "image": "/images/products/3468-san-martin-2.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/san-martin-2/"
+    },
+    {
+      "id": 3487,
+      "slug": "belize",
+      "name": "BELIZE",
+      "category": "Unitech",
+      "image": "/images/products/3487-belize.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/belize/"
+    },
+    {
+      "id": 5750,
+      "slug": "cordoba-3",
+      "name": "CÓRDOBA",
+      "category": "Unitech",
+      "image": "/images/products/5750-cordoba-3.jpg",
+      "source": "https://tempusdecor.com.br/catalogos/cordoba-3/"
+    },
+    {
+      "id": 7041,
+      "slug": "athenas",
+      "name": "ATHENAS",
+      "category": "Poltronas Complementos",
+      "image": "/images/products/7041-athenas.png",
+      "source": "https://tempusdecor.com.br/catalogos/athenas/"
+    },
+    {
+      "id": 7175,
+      "slug": "elif",
+      "name": "ELIF",
+      "category": "Poltronas Complementos",
+      "image": "/images/products/7175-elif.png",
+      "source": "https://tempusdecor.com.br/catalogos/elif/"
+    },
+    {
+      "id": 7187,
+      "slug": "amora",
+      "name": "AMORA",
+      "category": "Duotech",
+      "image": "/images/products/7187-amora.png",
+      "source": "https://tempusdecor.com.br/catalogos/amora/"
+    },
+    {
+      "id": 5777,
+      "slug": "cama-julia",
+      "name": "JULLIA",
+      "category": "Cama",
+      "image": "/images/products/5777-cama-julia.webp",
+      "source": "https://tempusdecor.com.br/catalogos/cama-julia/"
+    }
+  ]
+}

@@ -23,38 +23,38 @@ function Image({ fill, priority, style, onError, ...props }: ImageProps) {
 }
 
 const products = [
-  { name: "Mille", collection: "Essence", image: "/images/mille.jpg", features: "Reclínio automático · Base giratória" },
-  { name: "Athenas", collection: "Living", image: "/images/athenas.png", features: "Conforto ergonômico · Design compacto" },
-  { name: "Amora", collection: "Lounge", image: "/images/amora.png", features: "Chaise extensível · Dois lugares" },
+  { name: "Mille", collection: "Essence", image: "/images/products/5841-mille-3-2.jpg", features: "Reclínio automático · Base giratória" },
+  { name: "Athenas", collection: "Living", image: "/images/products/7041-athenas.png", features: "Conforto ergonômico · Design compacto" },
+  { name: "Amora", collection: "Lounge", image: "/images/products/7187-amora.png", features: "Chaise extensível · Dois lugares" },
 ];
 
 const collections = [
-  { number: "01", name: "Essence", description: "Conforto intuitivo para viver todos os dias.", image: "/images/mille.jpg" },
-  { number: "02", name: "Living", description: "Design leve para ambientes contemporâneos.", image: "/images/ayla.png" },
-  { number: "03", name: "Lounge", description: "Mais espaço para desacelerar.", image: "/images/amora.png" },
-  { number: "04", name: "Dreams", description: "Tecnologia dedicada ao descanso.", image: "/images/perola.png" },
+  { number: "01", name: "Essence", description: "Conforto intuitivo para viver todos os dias.", image: "/images/products/5841-mille-3-2.jpg" },
+  { number: "02", name: "Living", description: "Design leve para ambientes contemporâneos.", image: "/images/products/7400-ayla.png" },
+  { number: "03", name: "Lounge", description: "Mais espaço para desacelerar.", image: "/images/products/7187-amora.png" },
+  { number: "04", name: "Dreams", description: "Tecnologia dedicada ao descanso.", image: "/images/products/6629-perola.webp" },
 ];
 
 
 const newReleases = [
-  { name: "Mille", collection: "Essence", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=900&h=900&fit=crop&auto=format", alt: "Poltrona de madeira clara em fundo branco" },
-  { name: "Athenas", collection: "Living", image: "https://images.unsplash.com/photo-1612204186347-fef88cc864db?w=900&h=900&fit=crop&auto=format", alt: "Poltrona escura de couro com estrutura metálica" },
-  { name: "Amora", collection: "Lounge", image: "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=900&h=900&fit=crop&auto=format", alt: "Poltrona estofada em tom areia" },
-  { name: "Ayla", collection: "Living", image: "https://images.unsplash.com/photo-1554104707-a76b270e4bbb?w=900&h=900&fit=crop&auto=format", alt: "Cadeira metálica branca em fundo claro" },
-  { name: "Lina", collection: "Essence", image: "https://images.unsplash.com/photo-1554104683-c7063687d649?w=900&h=900&fit=crop&auto=format", alt: "Cadeira branca em fundo branco" },
-  { name: "Siena", collection: "Lounge", image: "https://images.unsplash.com/photo-1624345691006-e683ff409f3f?w=900&h=900&fit=crop&auto=format", alt: "Poltrona acolchoada escura" },
-  { name: "Nora", collection: "Dormitórios", image: "https://images.unsplash.com/photo-1648994517760-19afc8c7ba00?w=900&h=900&fit=crop&auto=format", alt: "Cadeira de madeira com tecido claro" },
-  { name: "Maya", collection: "Living", image: "https://images.unsplash.com/photo-1740154093925-ffb8e7ae526e?w=900&h=900&fit=crop&auto=format", alt: "Cadeira branca junto a uma parede clara" },
+  { name: "Mille", collection: "Essence", image: "/images/products/5841-mille-3-2.jpg", alt: "Poltrona de madeira clara em fundo branco" },
+  { name: "Athenas", collection: "Living", image: "/images/products/7041-athenas.png", alt: "Poltrona escura de couro com estrutura metálica" },
+  { name: "Amora", collection: "Lounge", image: "/images/products/7187-amora.png", alt: "Poltrona estofada em tom areia" },
+  { name: "Ayla", collection: "Living", image: "/images/products/7400-ayla.png", alt: "Cadeira metálica branca em fundo claro" },
+  { name: "Lina", collection: "Essence", image: "/images/products/6639-donna.webp", alt: "Cadeira branca em fundo branco" },
+  { name: "Siena", collection: "Lounge", image: "/images/products/7398-sila.png", alt: "Poltrona acolchoada escura" },
+  { name: "Nora", collection: "Dormitórios", image: "/images/products/6379-aurora.png", alt: "Cadeira de madeira com tecido claro" },
+  { name: "Maya", collection: "Living", image: "/images/products/7032-maya-cor-granizo.png", alt: "Cadeira branca junto a uma parede clara" },
 ];
 
 
 const collectionShowcase = [
-  { number: "01", name: "Poltronas reclináveis", description: "Movimento preciso para o descanso diário.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=1600&h=1100&fit=crop&auto=format", alt: "Poltrona reclinável em composição clara" },
-  { number: "02", name: "Living", description: "Peças para receber e permanecer.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1760072513367-55182245e76c?w=1600&h=1100&fit=crop&auto=format", alt: "Sala de estar contemporânea" },
-  { number: "03", name: "Dormitórios", description: "Acolhimento pensado para a noite.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&h=1100&fit=crop&auto=format", alt: "Quarto com cama e roupas de cama neutras" },
-  { number: "04", name: "Camas", description: "Presença, proporção e conforto.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?w=1600&h=1100&fit=crop&auto=format", alt: "Cama contemporânea em quarto amplo" },
-  { number: "05", name: "Colchões", description: "Suporte que acompanha o corpo.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1617098900591-3f90928e8c54?w=1600&h=1100&fit=crop&auto=format", alt: "Cama com roupa de cama clara" },
-  { number: "06", name: "Acessórios", description: "Detalhes que completam o ambiente.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1634148739177-775032f3feb1?w=1600&h=1100&fit=crop&auto=format", alt: "Objeto decorativo em ambiente minimalista" },
+  { number: "01", name: "Poltronas reclináveis", description: "Movimento preciso para o descanso diário.", href: "/categorias/reclinaveis", image: "/images/products/5841-mille-3-2.jpg", alt: "Poltrona reclinável em composição clara" },
+  { number: "02", name: "Living", description: "Peças para receber e permanecer.", href: "/categorias/reclinaveis", image: "/images/products/3750-coralina-taupe.jpg", alt: "Sala de estar contemporânea" },
+  { number: "03", name: "Dormitórios", description: "Acolhimento pensado para a noite.", href: "/categorias/reclinaveis", image: "/images/products/5777-cama-julia.webp", alt: "Quarto com cama e roupas de cama neutras" },
+  { number: "04", name: "Camas", description: "Presença, proporção e conforto.", href: "/categorias/reclinaveis", image: "/images/products/5777-cama-julia.webp", alt: "Cama contemporânea em quarto amplo" },
+  { number: "05", name: "Colchões", description: "Suporte que acompanha o corpo.", href: "/categorias/reclinaveis", image: "/images/products/5964-jessy-wisky-2.jpg", alt: "Cama com roupa de cama clara" },
+  { number: "06", name: "Acessórios", description: "Detalhes que completam o ambiente.", href: "/categorias/reclinaveis", image: "/images/products/5864-tess.jpg", alt: "Objeto decorativo em ambiente minimalista" },
 ];
 
 export default function Home() {
@@ -145,7 +145,7 @@ export default function Home() {
 
       <section className="editorial-feature" id="colecoes" aria-labelledby="feature-title">
         <div className="editorial-feature-image">
-          <img src="https://images.unsplash.com/photo-1750639258774-9a714379a093?w=1600&h=1900&fit=crop&auto=format" alt="Interior de estar elegante em tons neutros" />
+          <img src="/images/products/4634-lys.jpg" alt="Interior de estar elegante em tons neutros" />
         </div>
         <div className="editorial-feature-copy">
           <p className="editorial-eyebrow editorial-eyebrow--dark">Essence / 01</p>
@@ -175,22 +175,22 @@ export default function Home() {
         </header>
         <div className="editorial-product-grid">
           <a className="catalogue-product catalogue-product--tall" href="#assistencia">
-            <div className="catalogue-product-image"><img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=1100&h=1200&fit=crop&auto=format" alt="Poltrona de madeira clara em fundo branco" /></div>
+            <div className="catalogue-product-image"><img src="/images/products/5841-mille-3-2.jpg" alt="Poltrona de madeira clara em fundo branco" /></div>
             <div className="catalogue-product-meta"><span>01</span><h3>Mille</h3><p>Essence</p><b>↗</b></div>
           </a>
           <a className="catalogue-product" href="#assistencia">
-            <div className="catalogue-product-image"><img src="https://images.unsplash.com/photo-1612204186347-fef88cc864db?w=1100&h=900&fit=crop&auto=format" alt="Poltrona de couro escuro com estrutura metálica" /></div>
+            <div className="catalogue-product-image"><img src="/images/products/7041-athenas.png" alt="Poltrona de couro escuro com estrutura metálica" /></div>
             <div className="catalogue-product-meta"><span>02</span><h3>Athenas</h3><p>Living</p><b>↗</b></div>
           </a>
           <a className="catalogue-product catalogue-product--wide" href="#assistencia">
-            <div className="catalogue-product-image"><img src="https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=1200&h=760&fit=crop&auto=format" alt="Poltrona estofada em tom areia sobre fundo branco" /></div>
+            <div className="catalogue-product-image"><img src="/images/products/7187-amora.png" alt="Poltrona estofada em tom areia sobre fundo branco" /></div>
             <div className="catalogue-product-meta"><span>03</span><h3>Amora</h3><p>Lounge</p><b>↗</b></div>
           </a>
         </div>
       </section>
 
       <section className="technology-section" aria-labelledby="technology-title">
-        <div className="technology-visual"><img src="https://images.unsplash.com/photo-1599933345241-2d01fe8d06ec?w=1600&h=1200&fit=crop&auto=format" alt="Detalhe de estofado e tecido aplicado em uma poltrona" /></div>
+        <div className="technology-visual"><img src="/images/products/3465-lille-2.jpg" alt="Detalhe de estofado e tecido aplicado em uma poltrona" /></div>
         <div className="technology-content">
           <p className="editorial-eyebrow">Tecnologia Tempus</p>
           <h2 id="technology-title">Conforto é uma<br /><em>engenharia silenciosa.</em></h2>
@@ -211,7 +211,7 @@ export default function Home() {
           <p>Couros, tecidos e mecanismos escolhidos para revelar conforto com precisão silenciosa.</p>
           <a className="editorial-action" href="#profissionais">Conhecer materiais <span>↗</span></a>
         </div>
-        <div className="editorial-material-image"><img src="https://images.unsplash.com/photo-1564842505181-8862a3b9b173?w=1600&h=1300&fit=crop&auto=format" alt="Textura de couro marrom matelassê" /></div>
+        <div className="editorial-material-image"><img src="/images/products/6371-sophi-taupe.png" alt="Textura de couro marrom matelassê" /></div>
       </section>
 
       <section className="bedroom-section" aria-labelledby="bedroom-title">
@@ -221,7 +221,7 @@ export default function Home() {
           <p>Camas e colchões criados para transformar o descanso em parte essencial da arquitetura da casa.</p>
           <a className="editorial-action" href="#produtos">Explorar dormitórios <span>↗</span></a>
         </div>
-        <div className="bedroom-image"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1800&h=1300&fit=crop&auto=format" alt="Quarto contemporâneo com cama e roupas de cama em tons neutros" /></div>
+        <div className="bedroom-image"><img src="/images/products/5777-cama-julia.webp" alt="Quarto contemporâneo com cama e roupas de cama em tons neutros" /></div>
       </section>
 
       <section className="audience-section" aria-labelledby="audience-title">
@@ -245,27 +245,27 @@ export default function Home() {
         </div>
         <div className="ecosystem-panels" id="representantes">
           <a className="ecosystem-panel ecosystem-panel--representatives" href="#representantes">
-            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1400&h=1500&fit=crop&auto=format" alt="Ambiente de showroom de mobiliário contemporâneo" />
+            <img src="/images/products/7398-sila.png" alt="Ambiente de showroom de mobiliário contemporâneo" />
             <div><span>01</span><h3>Representantes nacionais</h3><p>Encontre quem conhece a Tempus e acompanha a sua escolha de perto.</p><b>Encontrar um representante <i>↗</i></b></div>
           </a>
           <a className="ecosystem-panel ecosystem-panel--professionals" href="#profissionais">
-            <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?w=1400&h=1500&fit=crop&auto=format" alt="Profissional organizando amostras e materiais de projeto" />
+            <img src="/images/products/7396-samia.png" alt="Profissional organizando amostras e materiais de projeto" />
             <div><span>02</span><h3>Arquitetos & designers</h3><p>Blocos 3D, materiais e informações para especificar com liberdade.</p><b>Recursos profissionais <i>↗</i></b></div>
           </a>
           <a className="ecosystem-panel ecosystem-panel--technical" href="#assistencia">
-            <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1400&h=1500&fit=crop&auto=format" alt="Detalhe de acabamento e marcenaria de mobiliário" />
+            <img src="/images/products/7346-ada-2.png" alt="Detalhe de acabamento e marcenaria de mobiliário" />
             <div><span>03</span><h3>Suporte técnico</h3><p>Informação precisa para cada detalhe, do projeto ao uso contínuo.</p><b>Informações técnicas <i>↗</i></b></div>
           </a>
         </div>
       </section>
 
       <section className="company-section" aria-labelledby="company-title">
-        <div className="company-image"><img src="https://images.unsplash.com/photo-1444069788560-6ae1deb4c0d4?w=1600&h=1150&fit=crop&auto=format" alt="Artesão trabalhando a madeira em uma oficina" /></div>
+        <div className="company-image"><img src="/images/products/6272-zoe-2.png" alt="Artesão trabalhando a madeira em uma oficina" /></div>
         <div className="company-copy"><p className="editorial-eyebrow editorial-eyebrow--dark">Tempus / Desde o começo</p><h2 id="company-title">Qualidade é aquilo<br />que fica <em>depois do tempo.</em></h2><p>Fabricamos com atenção ao detalhe, inovação responsável e respeito por materiais feitos para acompanhar histórias.</p><div className="company-values"><span><b>01</b>Design com propósito</span><span><b>02</b>Manufatura precisa</span><span><b>03</b>Materiais duráveis</span></div><a className="editorial-action" href="#inicio">Conhecer a Tempus <span>↗</span></a></div>
       </section>
 
       <section className="editorial-support" id="assistencia">
-        <img src="https://images.unsplash.com/photo-1760072513367-55182245e76c?w=1800&h=1050&fit=crop&auto=format" alt="Sala contemporânea com sofá e estante" />
+        <img src="/images/products/5841-mille-3-2.jpg" alt="Sala contemporânea com sofá e estante" />
         <div>
           <p className="editorial-eyebrow">Tempus / Atendimento</p>
           <h2>Cuidar faz parte<br />do <em>conforto.</em></h2>
