@@ -1,0 +1,83 @@
+/* Editorial refinements scoped to the existing About page. */
+.simple-about-page.simple-about-page {
+  --about-gutter: clamp(1.5rem, 6vw, 7rem);
+  --type-heading-leading: 1.14;
+  --type-body-leading: 1.7;
+}
+.simple-about-page :is(h1, h2, h3) { text-wrap: balance; }
+.simple-about-page section p { text-wrap: pretty; }
+.simple-about-page section { scroll-margin-top: 6rem; }
+.simple-about-page .simple-about-hero { min-height: min(900px, 94svh); }
+.simple-about-page .simple-about-hero > img { object-position: 64% center; }
+.simple-about-page .simple-about-hero-copy { max-width: 62rem; padding: 8rem var(--about-gutter) 5rem; }
+.simple-about-page .simple-about-hero h1 { max-width: 18ch; line-height: 1.08; margin: 1.2rem 0 1.4rem; }
+.simple-about-page .simple-about-hero-copy > p:last-child { max-width: 34ch; }
+.simple-about-page .simple-about-hero h1 em,
+.simple-about-page .simple-about-presence h2 em,
+.simple-about-page .simple-about-closing h2 em { color: #dedbd1; }
+.simple-about-page .simple-about-intro { min-height: 42rem; }
+.simple-about-page .simple-about-intro > div { padding: clamp(4rem, 8vw, 8rem) var(--about-gutter); }
+.simple-about-page .simple-about-intro h2 { margin: 1.5rem 0 1.75rem; }
+.simple-about-page .simple-about-intro > img { min-width: 0; box-sizing: border-box; object-fit: contain; padding: clamp(1.5rem, 4vw, 4rem); background: #e9e5dc; }
+.simple-about-page .simple-about-intro p:not(.editorial-number) { max-width: 38ch; }
+.simple-about-page .simple-about-numbers { min-height: auto; padding: clamp(4.5rem, 8vw, 8rem) var(--about-gutter); background: #e5e2d9; }
+.simple-about-page :is(.simple-about-numbers, .simple-about-team) header { grid-template-columns: .65fr 1.35fr 1fr; gap: clamp(1.5rem, 3vw, 3rem); align-items: start; }
+.simple-about-page .simple-about-numbers header { margin-bottom: clamp(3rem, 5vw, 5rem); }
+.simple-about-page :is(.simple-about-numbers, .simple-about-team) h2 { max-width: 20ch; }
+.simple-about-page .simple-about-numbers article { min-height: 10rem; }
+.simple-about-page .simple-about-numbers strong { font-size: clamp(3rem, 5vw, 5rem); line-height: 1; letter-spacing: -.045em; }
+.simple-about-page .simple-about-team { min-height: auto; padding: clamp(5rem, 9vw, 9rem) 0; }
+.simple-about-page .simple-about-team header { padding: 0 var(--about-gutter) 3.5rem; }
+.simple-about-page .simple-team-gallery { gap: 1.25rem; padding: 0 var(--about-gutter); scroll-padding-inline: var(--about-gutter); }
+.simple-about-page .simple-team-gallery article { flex-basis: calc((100% - 3.75rem) / 4); height: clamp(20rem, 28vw, 28rem); min-width: 0; }
+.simple-about-page .simple-team-gallery h3 { font-size: clamp(1.15rem, 1.5vw, 1.5rem); line-height: 1.25; }
+.simple-about-page .about-portrait-pending { position: absolute; inset: 0; display: grid; place-items: center; padding: 0; background: linear-gradient(145deg, #d4d0c5, #8c8d80); }
+.simple-about-page .about-portrait-pending > span { color: #44483d; font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; }
+.simple-about-page .leadership-section { min-height: auto; background: #e5e2d9; }
+.simple-about-page .leadership-copy { padding: 5rem var(--about-gutter); }
+.simple-about-page .leadership-copy h2 { max-width: 16ch; }
+.simple-about-page .leadership-copy > p { max-width: 34ch; margin-bottom: 2rem; }
+.simple-about-page .leadership-track { position: relative; width: 100%; gap: 1.25rem; padding: 4rem 0; }
+.simple-about-page .leadership-slide { flex: 0 0 80%; height: 32rem; min-height: 0; }
+.simple-about-page .leadership-controls { flex-wrap: wrap; gap: .75rem; }
+.simple-about-page .leadership-controls button { min-height: 44px; }
+.simple-about-page .leadership-slide h3 { margin-top: 1.25rem; }
+.simple-about-page .leadership-bio { max-width: 34ch; font-size: .875rem; }
+.simple-about-page .simple-about-presence { min-height: 38rem; }
+.simple-about-page .simple-about-presence > img { object-position: 65% center; }
+.simple-about-page .simple-about-presence::after { background: linear-gradient(90deg, rgba(20,24,20,.72), rgba(20,24,20,.12)); }
+.simple-about-page :is(.simple-about-presence, .simple-about-closing) > div { max-width: 52rem; padding: 5rem var(--about-gutter); }
+.simple-about-page :is(.simple-about-presence, .simple-about-closing) h2 { max-width: 20ch; }
+.simple-about-page :is(.simple-about-presence, .simple-about-closing) p:not(.editorial-eyebrow) { max-width: 37ch; }
+.simple-about-page .editorial-action { min-height: 44px; gap: 2rem; padding-block: .85rem; }
+.simple-about-page .simple-about-closing { min-height: 42rem; align-items: end; }
+.simple-about-page .simple-about-closing > img { object-position: 65% center; }
+.simple-about-page .simple-about-closing::after { background: linear-gradient(90deg, rgba(20,24,20,.68), transparent 80%); }
+.simple-about-page .simple-about-closing h2 { font-size: clamp(2rem, 2.8vw, 2.5rem); }
+.simple-about-page a:focus-visible, .simple-about-page button:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+@media (max-width: 900px) {
+  .simple-about-page :is(.simple-about-numbers, .simple-about-team) header { grid-template-columns: 1fr; gap: 1.25rem; }
+  .simple-about-page .simple-about-intro > div { min-height: auto; }
+  .simple-about-page .simple-about-intro > img { min-height: 0; max-height: 34rem; }
+  .simple-about-page .simple-team-gallery article { flex-basis: 42%; }
+  .simple-about-page .leadership-copy { min-height: auto; padding-block: 4rem 2rem; }
+  .simple-about-page .leadership-carousel { min-height: 0; margin-left: var(--about-gutter); }
+  .simple-about-page .leadership-track { padding: 0 0 4rem; }
+}
+@media (max-width: 620px) {
+  .simple-about-page .simple-about-hero { min-height: 46rem; min-height: 90svh; }
+  .simple-about-page .simple-about-hero > img { object-position: 61% center; }
+  .simple-about-page .simple-about-hero-copy { padding: 8rem var(--about-gutter) 3rem; }
+  .simple-about-page .simple-about-hero > div:nth-child(2) { background: linear-gradient(0deg, rgba(17,18,15,.8), rgba(17,18,15,.02) 85%); }
+  .simple-about-page .simple-about-numbers article { min-height: 9rem; }
+  .simple-about-page .simple-about-numbers article:nth-child(3) { padding-left: 0; }
+  .simple-about-page .simple-team-gallery article { flex-basis: 82%; height: 24rem; }
+  .simple-about-page .leadership-slide { flex-basis: 88%; height: 29rem; }
+  .simple-about-page .simple-about-presence { min-height: 34rem; }
+  .simple-about-page .simple-about-closing { min-height: 38rem; }
+  .simple-about-page .simple-about-closing::after { background: linear-gradient(0deg, rgba(20,24,20,.85), rgba(20,24,20,.05)); }
+  .simple-about-page :is(.simple-about-presence, .simple-about-closing) > div { padding-block: 4rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .simple-about-page .leadership-track { transition: none; }
+}
