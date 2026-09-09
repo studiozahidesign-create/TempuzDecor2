@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type ImgHTMLAttributes } from "react";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
-import { productCategories, products as cmsProducts } from "./cms/products";
+import heroBanner from "./imports/ChatGPT_Image_9_09_2026__09_05_43.png";
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   fill?: boolean;
@@ -22,12 +22,40 @@ function Image({ fill, priority, style, onError, ...props }: ImageProps) {
   );
 }
 
-const newReleases = cmsProducts.slice(0, 8);
-const featuredProducts = cmsProducts.slice(0, 3);
-const collectionShowcase = productCategories.map((category, index) => {
-  const product = cmsProducts.find((item) => item.categorySlug === category.slug)!;
-  return { number: String(index + 1).padStart(2, "0"), name: category.name, description: `${category.count} produtos ativos nesta coleção.`, href: "/categorias/reclinaveis", image: product.image, alt: `${product.name} — ${category.name}` };
-});
+const products = [
+  { name: "Mille", collection: "Essence", image: "/images/mille.jpg", features: "Reclínio automático · Base giratória" },
+  { name: "Athenas", collection: "Living", image: "/images/athenas.png", features: "Conforto ergonômico · Design compacto" },
+  { name: "Amora", collection: "Lounge", image: "/images/amora.png", features: "Chaise extensível · Dois lugares" },
+];
+
+const collections = [
+  { number: "01", name: "Essence", description: "Conforto intuitivo para viver todos os dias.", image: "/images/mille.jpg" },
+  { number: "02", name: "Living", description: "Design leve para ambientes contemporâneos.", image: "/images/ayla.png" },
+  { number: "03", name: "Lounge", description: "Mais espaço para desacelerar.", image: "/images/amora.png" },
+  { number: "04", name: "Dreams", description: "Tecnologia dedicada ao descanso.", image: "/images/perola.png" },
+];
+
+
+const newReleases = [
+  { name: "Mille", collection: "Essence", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=900&h=900&fit=crop&auto=format", alt: "Poltrona de madeira clara em fundo branco" },
+  { name: "Athenas", collection: "Living", image: "https://images.unsplash.com/photo-1612204186347-fef88cc864db?w=900&h=900&fit=crop&auto=format", alt: "Poltrona escura de couro com estrutura metálica" },
+  { name: "Amora", collection: "Lounge", image: "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=900&h=900&fit=crop&auto=format", alt: "Poltrona estofada em tom areia" },
+  { name: "Ayla", collection: "Living", image: "https://images.unsplash.com/photo-1554104707-a76b270e4bbb?w=900&h=900&fit=crop&auto=format", alt: "Cadeira metálica branca em fundo claro" },
+  { name: "Lina", collection: "Essence", image: "https://images.unsplash.com/photo-1554104683-c7063687d649?w=900&h=900&fit=crop&auto=format", alt: "Cadeira branca em fundo branco" },
+  { name: "Siena", collection: "Lounge", image: "https://images.unsplash.com/photo-1624345691006-e683ff409f3f?w=900&h=900&fit=crop&auto=format", alt: "Poltrona acolchoada escura" },
+  { name: "Nora", collection: "Dormitórios", image: "https://images.unsplash.com/photo-1648994517760-19afc8c7ba00?w=900&h=900&fit=crop&auto=format", alt: "Cadeira de madeira com tecido claro" },
+  { name: "Maya", collection: "Living", image: "https://images.unsplash.com/photo-1740154093925-ffb8e7ae526e?w=900&h=900&fit=crop&auto=format", alt: "Cadeira branca junto a uma parede clara" },
+];
+
+
+const collectionShowcase = [
+  { number: "01", name: "Poltronas reclináveis", description: "Movimento preciso para o descanso diário.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=1600&h=1100&fit=crop&auto=format", alt: "Poltrona reclinável em composição clara" },
+  { number: "02", name: "Living", description: "Peças para receber e permanecer.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1760072513367-55182245e76c?w=1600&h=1100&fit=crop&auto=format", alt: "Sala de estar contemporânea" },
+  { number: "03", name: "Dormitórios", description: "Acolhimento pensado para a noite.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&h=1100&fit=crop&auto=format", alt: "Quarto com cama e roupas de cama neutras" },
+  { number: "04", name: "Camas", description: "Presença, proporção e conforto.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?w=1600&h=1100&fit=crop&auto=format", alt: "Cama contemporânea em quarto amplo" },
+  { number: "05", name: "Colchões", description: "Suporte que acompanha o corpo.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1617098900591-3f90928e8c54?w=1600&h=1100&fit=crop&auto=format", alt: "Cama com roupa de cama clara" },
+  { number: "06", name: "Acessórios", description: "Detalhes que completam o ambiente.", href: "/categorias/reclinaveis", image: "https://images.unsplash.com/photo-1634148739177-775032f3feb1?w=1600&h=1100&fit=crop&auto=format", alt: "Objeto decorativo em ambiente minimalista" },
+];
 
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -60,8 +88,7 @@ export default function Home() {
     const rail = collectionRailRef.current;
     if (!rail) return;
     const maxScroll = Math.max(rail.scrollWidth - rail.clientWidth, 1);
-    const lastSlide = Math.max(collectionShowcase.length - 1, 0);
-    setCollectionSlide(Math.min(lastSlide, Math.max(0, Math.round((rail.scrollLeft / maxScroll) * lastSlide))));
+    setCollectionSlide(Math.min(5, Math.max(0, Math.round((rail.scrollLeft / maxScroll) * 5))));
   };
 
   useEffect(() => {
@@ -72,7 +99,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="page-shell">
+    <main className="page-shell home-page">
       <header className={headerScrolled ? "minimal-header is-scrolled" : "minimal-header"}>
         <a className="brand brand-logo" href="#inicio" aria-label="Tempus, início">
           <TempusLogo />
@@ -90,7 +117,7 @@ export default function Home() {
       </header>
 
       <section className="editorial-hero" id="inicio" aria-label="Tempus Decor">
-        <img className="editorial-hero-image" src="https://images.unsplash.com/photo-1564078516393-cf04bd966897?w=2400&h=1500&fit=crop&auto=format" alt="Sala de estar contemporânea com chaise próxima à janela" />
+        <img className="editorial-hero-image" src={heroBanner} alt="Poltrona reclinável Tempus em sala contemporânea com vista para as montanhas" />
         <div className="editorial-hero-shade" />
         <div className="editorial-hero-content">
           <p className="editorial-eyebrow">Tempus Decor / Brasil</p>
@@ -111,7 +138,7 @@ export default function Home() {
         <div className="brand-product-carousel">
           <div className="brand-product-carousel-top"><p className="editorial-eyebrow editorial-eyebrow--dark">Novidades Tempus</p><div className="carousel-controls" aria-label="Navegação dos lançamentos"><span>{String(carouselPage).padStart(2, "0")} / 08</span><button type="button" onClick={() => scrollReleases(-1)} aria-label="Produto anterior">←</button><button type="button" onClick={() => scrollReleases(1)} aria-label="Próximo produto">→</button></div></div>
           <div className="release-showcase-rail" ref={releaseRailRef} onScroll={updateCarouselPage}>
-            {newReleases.map((product) => <a className="release-showcase-slide" href={`/produtos/${product.slug}`} key={product.id}><div className="release-showcase-image"><img src={product.image} alt={`${product.name} — ${product.category}`} /></div><div className="release-showcase-caption"><p>{product.category}</p><h3>{product.name}</h3><span>Explorar produto →</span></div></a>)}
+            {newReleases.map((product) => <a className="release-showcase-slide" href="/produtos/mille" key={product.name}><div className="release-showcase-image"><img src={product.image} alt={product.alt} /></div><div className="release-showcase-caption"><p>{product.collection}</p><h3>{product.name}</h3><span>Explorar produto →</span></div></a>)}
           </div>
         </div>
       </section>
@@ -133,7 +160,7 @@ export default function Home() {
           <p className="editorial-eyebrow editorial-eyebrow--dark">Coleções Tempus</p>
           <h2 id="collection-showcase-title">Conforto para cada<br /><em>ritmo de viver.</em></h2>
           <p>Uma família de peças pensada para acompanhar diferentes maneiras de habitar a casa.</p>
-          <div className="collection-showcase-controls"><span>{String(collectionSlide + 1).padStart(2, "0")} / {String(collectionShowcase.length).padStart(2, "0")}</span><button type="button" onClick={() => scrollCollections(-1)} aria-label="Coleção anterior">←</button><button type="button" onClick={() => scrollCollections(1)} aria-label="Próxima coleção">→</button></div>
+          <div className="collection-showcase-controls"><span>{String(collectionSlide + 1).padStart(2, "0")} / 06</span><button type="button" onClick={() => scrollCollections(-1)} aria-label="Coleção anterior">←</button><button type="button" onClick={() => scrollCollections(1)} aria-label="Próxima coleção">→</button></div>
         </div>
         <div className="collection-showcase-rail" ref={collectionRailRef} onScroll={updateCollectionSlide}>
           {collectionShowcase.map((collection) => <a className="collection-showcase-slide" href={collection.href} key={collection.name}><div className="collection-showcase-image"><img src={collection.image} alt={collection.alt} /></div><div className="collection-showcase-caption"><p>{collection.number}</p><h3>{collection.name}</h3><span>{collection.description}</span><b>Explorar coleção →</b></div></a>)}
@@ -147,7 +174,18 @@ export default function Home() {
           <p>Uma edição essencial de poltronas para viver, receber e desacelerar.</p>
         </header>
         <div className="editorial-product-grid">
-          {featuredProducts.map((product, index) => <a className={`catalogue-product ${index === 0 ? "catalogue-product--tall" : index === 2 ? "catalogue-product--wide" : ""}`} href={`/produtos/${product.slug}`} key={product.id}><div className="catalogue-product-image"><img src={product.image} alt={`${product.name} — ${product.category}`} /></div><div className="catalogue-product-meta"><span>{String(index + 1).padStart(2, "0")}</span><h3>{product.name}</h3><p>{product.category}</p><b>↗</b></div></a>)}
+          <a className="catalogue-product catalogue-product--tall" href="#assistencia">
+            <div className="catalogue-product-image"><img src="https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=1100&h=1200&fit=crop&auto=format" alt="Poltrona de madeira clara em fundo branco" /></div>
+            <div className="catalogue-product-meta"><span>01</span><h3>Mille</h3><p>Essence</p><b>↗</b></div>
+          </a>
+          <a className="catalogue-product" href="#assistencia">
+            <div className="catalogue-product-image"><img src="https://images.unsplash.com/photo-1612204186347-fef88cc864db?w=1100&h=900&fit=crop&auto=format" alt="Poltrona de couro escuro com estrutura metálica" /></div>
+            <div className="catalogue-product-meta"><span>02</span><h3>Athenas</h3><p>Living</p><b>↗</b></div>
+          </a>
+          <a className="catalogue-product catalogue-product--wide" href="#assistencia">
+            <div className="catalogue-product-image"><img src="https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=1200&h=760&fit=crop&auto=format" alt="Poltrona estofada em tom areia sobre fundo branco" /></div>
+            <div className="catalogue-product-meta"><span>03</span><h3>Amora</h3><p>Lounge</p><b>↗</b></div>
+          </a>
         </div>
       </section>
 
@@ -223,7 +261,7 @@ export default function Home() {
 
       <section className="company-section" aria-labelledby="company-title">
         <div className="company-image"><img src="https://images.unsplash.com/photo-1444069788560-6ae1deb4c0d4?w=1600&h=1150&fit=crop&auto=format" alt="Artesão trabalhando a madeira em uma oficina" /></div>
-        <div className="company-copy"><p className="editorial-eyebrow editorial-eyebrow--dark">Tempus / Desde o começo</p><h2 id="company-title">Qualidade é aquilo<br />que fica <em>depois do tempo.</em></h2><p>Fabricamos com atenção ao detalhe, inovação responsável e respeito por materiais feitos para acompanhar histórias.</p><div className="company-values"><span>Design com propósito</span><span>Manufatura precisa</span><span>Materiais duráveis</span></div><a className="editorial-action" href="#inicio">Conhecer a Tempus <span>↗</span></a></div>
+        <div className="company-copy"><p className="editorial-eyebrow editorial-eyebrow--dark">Tempus / Desde o começo</p><h2 id="company-title">Qualidade é aquilo<br />que fica <em>depois do tempo.</em></h2><p>Fabricamos com atenção ao detalhe, inovação responsável e respeito por materiais feitos para acompanhar histórias.</p><div className="company-values"><span><b>01</b>Design com propósito</span><span><b>02</b>Manufatura precisa</span><span><b>03</b>Materiais duráveis</span></div><a className="editorial-action" href="#inicio">Conhecer a Tempus <span>↗</span></a></div>
       </section>
 
       <section className="editorial-support" id="assistencia">

@@ -2411,3 +2411,397 @@ h1, h2, h3, h4, h5, h6,
   .editorial-material-copy > p,
   .editorial-professionals > p { max-width: 34ch; }
 }
+
+/* Home-only typography calibration — keeps the existing Manrope and page structure. */
+.home-page {
+  --type-display: clamp(3rem, 5vw, 4.5rem);
+  --type-h2: clamp(2rem, 3.2vw, 2.625rem);
+  --type-h3: clamp(1.5rem, 2vw, 1.75rem);
+  --type-body: 1rem;
+  --type-body-sm: .875rem;
+  --type-label: .6875rem;
+  --type-cta: .875rem;
+  --type-nav: .875rem;
+  --type-display-leading: .96;
+  --type-heading-leading: 1.04;
+  --type-body-leading: 1.52;
+  --type-label-tracking: .1em;
+  --type-copy-measure: 30rem;
+  --type-copy-compact: 26rem;
+}
+.home-page .minimal-nav { font-size: var(--type-nav); font-weight: 400; }
+.home-page .quiet-cta { font-size: var(--type-cta); font-weight: 400; }
+.home-page .editorial-eyebrow,
+.home-page .editorial-number,
+.home-page .catalogue-product-meta > span,
+.home-page .catalogue-product-meta > p,
+.home-page .release-showcase-caption p,
+.home-page .collection-showcase-caption p,
+.home-page .technology-points span,
+.home-page .audience-grid span,
+.home-page .ecosystem-panel span,
+.home-page .company-copy > .editorial-eyebrow {
+  font-size: var(--type-label);
+  font-weight: 500;
+  letter-spacing: var(--type-label-tracking);
+  line-height: 1.2;
+}
+.home-page .editorial-hero h1 { max-width: 12ch; font-size: var(--type-display); font-weight: 400; line-height: var(--type-display-leading); letter-spacing: -.045em; }
+.home-page .brand-product-story h2,
+.home-page .editorial-feature h2,
+.home-page .collection-showcase-intro h2,
+.home-page .editorial-products h2,
+.home-page .technology-content h2,
+.home-page .editorial-material-copy h2,
+.home-page .bedroom-copy h2,
+.home-page .audience-head h2,
+.home-page .ecosystem-intro h2,
+.home-page .company-copy h2,
+.home-page .editorial-support h2 {
+  max-width: 18ch;
+  font-size: var(--type-h2);
+  font-weight: 400;
+  line-height: var(--type-heading-leading);
+  letter-spacing: -.045em;
+}
+.home-page .editorial-hero-lead,
+.home-page .editorial-statement-copy p,
+.home-page .editorial-feature-copy > p,
+.home-page .editorial-section-head > p,
+.home-page .editorial-material-copy > p,
+.home-page .bedroom-copy > p,
+.home-page .ecosystem-intro > p,
+.home-page .company-copy > p,
+.home-page .editorial-support-copy > p {
+  max-width: var(--type-copy-measure);
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+}
+.home-page .catalogue-product h3,
+.home-page .release-showcase-caption h3,
+.home-page .collection-showcase-caption h3,
+.home-page .technology-points h3,
+.home-page .audience-grid h3,
+.home-page .ecosystem-panel h3 { font-size: var(--type-h3); font-weight: 400; line-height: 1.12; letter-spacing: -.035em; }
+.home-page .catalogue-product small,
+.home-page .release-showcase-caption span,
+.home-page .collection-showcase-caption span,
+.home-page .technology-points p,
+.home-page .audience-grid p,
+.home-page .ecosystem-panel p,
+.home-page .company-values span { font-size: var(--type-body-sm); font-weight: 400; line-height: 1.48; }
+.home-page .editorial-action,
+.home-page .release-showcase-caption b,
+.home-page .collection-showcase-caption b,
+.home-page .ecosystem-panel b { font-size: var(--type-cta); font-weight: 500; line-height: 1.2; }
+.home-page .editorial-hero h1 + .editorial-hero-lead { margin-top: 1.75rem; }
+.home-page .editorial-hero-lead + .editorial-action { margin-top: .4rem; }
+.home-page .editorial-feature-copy > p,
+.home-page .editorial-material-copy > p,
+.home-page .bedroom-copy > p,
+.home-page .company-copy > p { max-width: var(--type-copy-compact); }
+@media (max-width: 620px) {
+  .home-page { --type-display: 2.5rem; --type-h2: 2rem; --type-h3: 1.5rem; --type-body: .9375rem; --type-copy-measure: 28rem; --type-copy-compact: 24rem; }
+  .home-page .editorial-hero h1 { max-width: 13ch; }
+  .home-page .brand-product-story h2,
+  .home-page .editorial-feature h2,
+  .home-page .collection-showcase-intro h2,
+  .home-page .editorial-products h2,
+  .home-page .technology-content h2,
+  .home-page .editorial-material-copy h2,
+  .home-page .bedroom-copy h2,
+  .home-page .audience-head h2,
+  .home-page .ecosystem-intro h2,
+  .home-page .company-copy h2,
+  .home-page .editorial-support h2 { max-width: 16ch; }
+}
+
+/* About-only typography calibration — same editorial scale used for the Home. */
+.simple-about-page {
+  --type-display: clamp(3rem, 4vw, 3.5rem);
+  --type-h2: clamp(2rem, 3.2vw, 2.625rem);
+  --type-h3: clamp(1.5rem, 2vw, 1.75rem);
+  --type-body: 1rem;
+  --type-body-sm: .875rem;
+  --type-label: .6875rem;
+  --type-cta: .875rem;
+  --type-nav: .875rem;
+  --type-display-leading: .96;
+  --type-heading-leading: 1.04;
+  --type-body-leading: 1.52;
+  --type-label-tracking: .1em;
+  --type-copy-measure: 30rem;
+  --type-copy-compact: 26rem;
+}
+.simple-about-page .minimal-nav { font-size: var(--type-nav); font-weight: 400; }
+.simple-about-page .quiet-cta { font-size: var(--type-cta); font-weight: 400; }
+.simple-about-page .editorial-eyebrow,
+.simple-about-page .editorial-number,
+.simple-about-page .simple-team-gallery span,
+.simple-about-page .leadership-slide span {
+  font-size: var(--type-label);
+  font-weight: 500;
+  letter-spacing: var(--type-label-tracking);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+.simple-about-page .simple-about-hero h1 { max-width: 12ch; font-size: var(--type-display); font-weight: 400; line-height: var(--type-display-leading); letter-spacing: -.045em; }
+.simple-about-page .simple-about-intro h2,
+.simple-about-page .simple-about-numbers h2,
+.simple-about-page .simple-about-team h2,
+.simple-about-page .leadership-copy h2,
+.simple-about-page .simple-about-presence h2,
+.simple-about-page .simple-about-closing h2 {
+  font-size: var(--type-h2);
+  font-weight: 400;
+  line-height: var(--type-heading-leading);
+  letter-spacing: -.045em;
+}
+.simple-about-page .simple-about-hero-copy > p:last-child,
+.simple-about-page .simple-about-intro p:not(.editorial-number),
+.simple-about-page .simple-about-numbers header > p:last-child,
+.simple-about-page .simple-about-team header > p:last-child,
+.simple-about-page .leadership-copy > p,
+.simple-about-page .simple-about-presence p:not(.editorial-eyebrow),
+.simple-about-page .simple-about-closing p:not(.editorial-eyebrow),
+.simple-about-page .leadership-bio {
+  max-width: var(--type-copy-measure);
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: var(--type-body-leading);
+}
+.simple-about-page .simple-team-gallery h3,
+.simple-about-page .leadership-slide h3 { font-size: var(--type-h3); font-weight: 400; line-height: 1.12; letter-spacing: -.035em; }
+.simple-about-page .simple-team-gallery p,
+.simple-about-page .leadership-position,
+.simple-about-page .leadership-controls button,
+.simple-about-page .leadership-controls span,
+.simple-about-page .simple-about-numbers span { font-size: var(--type-body-sm); font-weight: 400; line-height: 1.48; }
+.simple-about-page .leadership-position { font-weight: 500; letter-spacing: .04em; }
+.simple-about-page .editorial-action { font-size: var(--type-cta); font-weight: 500; line-height: 1.2; }
+@media (max-width: 620px) {
+  .simple-about-page { --type-display: 2.5rem; --type-h2: 2rem; --type-h3: 1.5rem; --type-body: .9375rem; --type-copy-measure: 28rem; }
+  .simple-about-page .simple-about-hero h1 { max-width: 13ch; }
+}
+
+/* Global typography rule: Tempus uses upright typography only. */
+html, body, button, input, textarea, select,
+h1, h2, h3, h4, h5, h6, p, a, span, small, strong, b, em, i, label, option {
+  font-style: normal !important;
+}
+
+/* Home company chapter: banner composition aligned to the supplied visual reference. */
+.home-page .company-section {
+  display: block;
+  min-height: 100svh;
+  background: #1d1d19;
+}
+.home-page .company-section::after {
+  background: linear-gradient(90deg, rgba(12, 13, 11, .68) 0%, rgba(12, 13, 11, .43) 46%, rgba(12, 13, 11, .19) 100%);
+}
+.home-page .company-section .company-image img { object-position: center; }
+.home-page .company-section .company-copy {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: min(100% - 48px, 28rem);
+  min-height: 100svh;
+  margin-left: clamp(24px, 12.5vw, 200px);
+  padding: 0;
+  text-align: left;
+}
+.home-page .company-section .company-copy h2 {
+  max-width: 13ch;
+  margin: 3.5rem 0 1.8rem;
+  text-align: left;
+}
+.home-page .company-section .company-copy > p {
+  max-width: 26rem;
+  margin: 0 0 2rem;
+  text-align: left;
+}
+.home-page .company-section .company-values {
+  justify-items: start;
+  width: 100%;
+  margin: 0 0 2.35rem;
+}
+.home-page .company-section .company-values span { text-align: left; }
+@media (max-width: 620px) {
+  .home-page .company-section .company-copy {
+    width: min(100% - 48px, 28rem);
+    min-height: 100svh;
+    margin-left: 24px;
+    padding: 0;
+  }
+  .home-page .company-section .company-copy h2 { margin-top: 2.3rem; }
+}
+
+/* Home company chapter — internal content placement refined to the banner reference. */
+.home-page .company-section .company-copy {
+  justify-content: flex-start;
+  padding-top: clamp(10rem, 23vh, 14rem);
+}
+.home-page .company-section .company-copy h2 {
+  max-width: 15ch;
+  margin: 3.2rem 0 2.15rem;
+  font-size: clamp(2.55rem, 3.7vw, 3.8rem);
+  line-height: .99;
+}
+.home-page .company-section .company-copy > p {
+  max-width: 29rem;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.home-page .company-section .company-values {
+  position: absolute;
+  bottom: clamp(3rem, 9vh, 6.5rem);
+  left: 0;
+  gap: .85rem;
+  width: min(100%, 33rem);
+  padding-top: 1.2rem;
+}
+.home-page .company-section .company-values span {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: .7rem;
+  align-items: baseline;
+  font-size: .875rem;
+  font-weight: 400;
+}
+.home-page .company-section .company-values b {
+  color: rgba(255,255,255,.7);
+  font-size: .6875rem;
+  font-weight: 400;
+  letter-spacing: .08em;
+}
+.home-page .company-section .editorial-action { margin-top: 2rem; }
+@media (max-width: 620px) {
+  .home-page .company-section .company-copy { padding-top: 8.5rem; }
+  .home-page .company-section .company-copy h2 { margin: 2.2rem 0 1.6rem; font-size: 2.35rem; }
+  .home-page .company-section .company-values { bottom: 3rem; }
+}
+
+/* Home company chapter: a fixed left content column and structured attribute rail. */
+.home-page .company-section .company-copy {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: clamp(48px, 7.5vw, 124px);
+  width: min(31rem, calc(100% - 96px));
+  min-height: 0;
+  margin: 0;
+  padding: clamp(10rem, 23vh, 14rem) 0 0;
+}
+.home-page .company-section .company-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  bottom: clamp(3rem, 7vh, 5rem);
+  width: min(30rem, calc(100vw - 96px));
+  padding-top: 1.05rem;
+  border-top: 1px solid rgba(255,255,255,.42);
+}
+.home-page .company-section .company-values span {
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  align-items: flex-start;
+  min-height: 3.8rem;
+  padding-right: 1rem;
+  font-size: .75rem;
+  line-height: 1.35;
+}
+.home-page .company-section .company-values span + span { padding-left: 1rem; border-left: 1px solid rgba(255,255,255,.2); }
+.home-page .company-section .company-values b { color: rgba(255,255,255,.62); font-size: .625rem; font-weight: 500; letter-spacing: .1em; }
+@media (max-width: 620px) {
+  .home-page .company-section .company-copy { left: 24px; width: calc(100% - 48px); padding-top: 8.5rem; }
+  .home-page .company-section .company-values { width: 100%; bottom: 2.5rem; }
+  .home-page .company-section .company-values span { font-size: .68rem; }
+  .home-page .company-section .company-values span + span { padding-left: .65rem; }
+}
+
+/* Home: “A maneira Tempus / Novidades” is a single vertical editorial chapter. */
+.home-page .brand-product-showcase {
+  display: block;
+  min-height: 0;
+  overflow: visible;
+  padding: clamp(7rem, 10vw, 10rem) max(2rem, 8vw) clamp(6rem, 9vw, 9rem);
+}
+.home-page .brand-product-story {
+  position: static;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: min(100%, 38rem);
+  height: auto;
+  min-height: 0;
+  padding: 0;
+}
+.home-page .brand-product-story h2 { max-width: 13ch; margin: 1.5rem 0 1.7rem; }
+.home-page .brand-product-story > p:not(.editorial-number) { max-width: 28rem; margin-bottom: 2rem; }
+.home-page .brand-product-carousel {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  padding: clamp(4.5rem, 7vw, 7rem) 0 0;
+}
+.home-page .brand-product-carousel-top {
+  width: 100%;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+.home-page .release-showcase-rail {
+  width: 100%;
+  height: auto;
+  gap: clamp(1rem, 2vw, 1.75rem);
+  padding: 0 0 .6rem;
+}
+.home-page .release-showcase-slide { flex: 0 0 clamp(13rem, 21vw, 20rem); }
+.home-page .release-showcase-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+  background: #eeede8;
+}
+.home-page .release-showcase-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: cover;
+  mix-blend-mode: normal;
+}
+.home-page .release-showcase-caption { padding-top: 1rem; }
+@media (max-width: 900px) {
+  .home-page .brand-product-showcase { padding-right: max(2rem, 8vw); padding-left: max(2rem, 8vw); }
+  .home-page .brand-product-carousel { padding-top: 4rem; }
+  .home-page .release-showcase-slide { flex-basis: clamp(13rem, 35vw, 18rem); }
+}
+@media (max-width: 620px) {
+  .home-page .brand-product-showcase { padding: 5.5rem 1.5rem; }
+  .home-page .brand-product-story { width: 100%; }
+  .home-page .brand-product-carousel { padding-top: 3.25rem; }
+  .home-page .release-showcase-slide { flex-basis: min(76vw, 20rem); }
+}
+
+/* Home: introductory copy stays within the visual measure of its heading. */
+.home-page .brand-product-story > p:not(.editorial-number) {
+  max-width: min(100%, 24rem);
+}
+@media (max-width: 620px) {
+  .home-page .brand-product-story > p:not(.editorial-number) { max-width: 100%; }
+}
+
+/* Shared editorial CTA: underline follows the action instead of the content column. */
+a.editorial-action,
+button.editorial-action {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding-right: .5rem;
+  align-self: flex-start;
+}
