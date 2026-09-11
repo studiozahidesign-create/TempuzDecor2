@@ -1062,14 +1062,14 @@ h1, h2, h3, h4, h5, h6, p, a, span, small, strong, b, em { font-family: inherit;
 .catalog-hero-copy > span { font-size: var(--font-label); font-weight: 500; letter-spacing: var(--letter-spacing-label); text-transform: uppercase; color: var(--muted); }
 .catalog-hero-image { min-height: 42rem; overflow: hidden; }
 .catalog-hero-image img { width: 100%; height: 100%; object-fit: cover; }
-.catalog-collections { padding: clamp(4rem, 7vw, 7rem) max(2rem, 8vw); background: #fff; overflow: hidden; }
-.catalog-collection-rail { display: grid; grid-template-columns: repeat(6, minmax(9rem, 1fr)); gap: clamp(.9rem, 1.4vw, 1.5rem); }
-.catalog-collection-rail button { display: block; padding: 0; border: 0; background: none; color: var(--ink); text-align: left; cursor: pointer; }
-.catalog-collection-rail img { display: block; width: 100%; aspect-ratio: 1.45; object-fit: contain; background: #fff; transition: transform .25s ease, opacity .25s ease; }
-.catalog-collection-rail span { display: block; padding-top: .8rem; font-size: var(--font-small); font-weight: 500; transition: color .2s ease; }
+.catalog-collections { height: auto; max-height: none; min-height: 0 !important; padding: clamp(2.5rem, 4vw, 4rem) max(2rem, 8vw) clamp(2rem, 3vw, 3rem); background: #fff; overflow: visible; }
+.catalog-collection-rail { display: grid; grid-template-columns: repeat(6, minmax(9rem, 1fr)); gap: clamp(1rem, 1.8vw, 2rem); align-items: start; }
+.catalog-collection-rail button { display: grid; align-content: start; gap: .85rem; min-height: 0; padding: 0; border: 0; background: none; color: var(--ink); text-align: center; cursor: pointer; }
+.catalog-collection-rail img { display: block; width: 100%; aspect-ratio: 1.18; object-fit: contain; object-position: center bottom; background: #f8f7f3; transition: transform .25s ease, opacity .25s ease; }
+.catalog-collection-rail span { display: block; padding-top: 0; font-size: var(--font-small); font-weight: 500; line-height: 1.2; transition: color .2s ease; }
 .catalog-collection-rail button:hover img, .catalog-collection-rail button.is-active img { transform: scale(1.025); }
 .catalog-collection-rail button.is-active span { color: #000; }
-.catalog-products { min-height: 100vh; padding: 0 max(2rem, 8vw) clamp(7rem, 11vw, 12rem); background: var(--paper); }
+.catalog-products { height: auto; max-height: none; min-height: 0 !important; padding: 0 max(2rem, 8vw) clamp(7rem, 11vw, 12rem); background: var(--paper); overflow: visible; }
 .catalog-filter-bar { position: sticky; top: 82px; z-index: 12; display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 1.5rem; align-items: center; min-height: 4.5rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper); }
 .catalog-filter-summary { display: flex; gap: .7rem; align-items: center; font-size: var(--font-small); }
 .catalog-filter-summary span { color: var(--muted); }
