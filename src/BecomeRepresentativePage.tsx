@@ -1,4 +1,6 @@
 import { FormEvent, useEffect, useState } from "react";
+import { geoMercator, geoPath } from "d3-geo";
+import brazilStatesData from "./data/brazil-states.json";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
 
@@ -26,6 +28,25 @@ const process = [
   ["Parceria", "Definimos os próximos passos para começar a trabalhar juntos."],
 ];
 const profile = ["Experiência comercial", "Conhecimento do mercado de móveis e design", "Relacionamento com lojistas e profissionais", "Atuação regional", "Perfil consultivo", "Organização e acompanhamento comercial"];
+const highlightedStates = new Set(["São Paulo", "Paraná", "Santa Catarina", "Rio Grande do Sul", "Bahia", "Pernambuco", "Ceará"]);
+
+function BrazilNetworkMap() {
+  const projection = geoMercator().fitSize([490, 540], brazilStatesData as never);
+  const pathGenerator = geoPath(projection);
+
+  return (
+    <svg className="rep-brazil-map" viewBox="0 0 490 540" role="img" aria-label="Mapa do Brasil indicando regiões de atuação da Tempus">
+      {brazilStatesData.features.map((feature) => {
+        const state = feature.properties.name as string;
+        return <path key={state} d={pathGenerator(feature as never) ?? ""} className={highlightedStates.has(state) ? "is-highlighted" : ""}><title>{state}</title></path>;
+      })}
+      <circle className="rep-map-pin" cx="324" cy="352" r="5"><title>São Paulo</title></circle>
+      <circle className="rep-map-pin" cx="308" cy="394" r="5"><title>Região Sul</title></circle>
+      <circle className="rep-map-pin" cx="394" cy="213" r="5"><title>Nordeste</title></circle>
+      <circle className="rep-map-pin" cx="276" cy="288" r="5"><title>Centro-Oeste</title></circle>
+    </svg>
+  );
+}
 
 export default function BecomeRepresentativePage() {
   const [headerScrolled, setHeaderScrolled] = useState(false);
@@ -72,7 +93,7 @@ export default function BecomeRepresentativePage() {
 
       <section className="rep-process" aria-labelledby="process-title"><div><p className="editorial-eyebrow editorial-eyebrow--dark">Como funciona</p><h2 id="process-title">O começo de uma<br /><em>boa parceria.</em></h2></div><ol>{process.map(([name, copy], index) => <li key={name}><span>{String(index + 1).padStart(2, "0")}</span><h3>{name}</h3><p>{copy}</p></li>)}</ol></section>
 
-      <section className="rep-network" aria-labelledby="network-title"><div className="rep-map" aria-label="Mapa estilizado do Brasil indicando regiões de atuação"><div className="rep-map-shape" /><i className="pin pin-1" /><i className="pin pin-2" /><i className="pin pin-3" /><i className="pin pin-4" /><p>Brasil</p></div><div><p className="editorial-eyebrow">Onde estamos</p><h2 id="network-title">Uma rede que continua <em>crescendo.</em></h2><p>Já estamos presentes em diferentes regiões do Brasil e buscamos novos parceiros para ampliar nossa atuação.</p><a href="#candidatura">Ver oportunidade na minha região <span>↘</span></a></div></section>
+      <section className="rep-network" aria-labelledby="network-title"><div className="rep-map"><BrazilNetworkMap /><p>Brasil</p></div><div><p className="editorial-eyebrow">Onde estamos</p><h2 id="network-title">Uma rede que continua <em>crescendo.</em></h2><p>Já estamos presentes em diferentes regiões do Brasil e buscamos novos parceiros para ampliar nossa atuação.</p><a href="#candidatura">Ver oportunidade na minha região <span>↘</span></a></div></section>
 
       <section className="rep-profile" aria-labelledby="profile-title"><div><p className="editorial-eyebrow editorial-eyebrow--dark">Quem procuramos</p><h2 id="profile-title">Parceiros que<br />conhecem o <em>mercado.</em></h2></div><ul>{profile.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}</ul></section>
 
