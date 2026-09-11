@@ -23,6 +23,11 @@
 .simple-about-page .simple-about-intro > img { min-width: 0; box-sizing: border-box; object-fit: cover; object-position: 64% center; padding: 0; background: #e9e5dc; }
 .simple-about-page .simple-about-intro p:not(.editorial-number) { max-width: 40ch; color: #595a53; }
 .simple-about-page .simple-about-numbers { min-height: auto; padding: clamp(5rem, 8vw, 8.5rem) var(--about-gutter); background: #fff; }
+.simple-about-page > :is(.simple-about-intro, .simple-about-numbers, .simple-about-team, .leadership-section) {
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
 .simple-about-page :is(.simple-about-numbers, .simple-about-team) header { grid-template-columns: .65fr 1.35fr 1fr; gap: clamp(1.5rem, 3vw, 3rem); align-items: start; }
 .simple-about-page .simple-about-numbers header { margin-bottom: clamp(3rem, 5vw, 5rem); }
 .simple-about-page :is(.simple-about-numbers, .simple-about-team) h2 { max-width: 17ch; }
