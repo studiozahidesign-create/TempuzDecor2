@@ -4,7 +4,7 @@ import SiteFooter from "./SiteFooter";
 
 const BANNER_PLACEHOLDER = "/images/banner-placeholder.svg";
 
-type Product = { name: string; collection: string; type: string; image: string; technology?: string };
+type Product = { name: string; slug: string; collection: string; type: string; image: string; technology?: string };
 
 const collections = [
   ["Essence", "/images/products/5841-mille-3-2.jpg"],
@@ -16,14 +16,14 @@ const collections = [
 ] as const;
 
 const products: Product[] = [
-  { name: "Mille", collection: "Essence", type: "Reclinável", technology: "Reclínio elétrico", image: "/images/products/5841-mille-3-2.jpg" },
-  { name: "Athenas", collection: "Living", type: "Poltrona", technology: "Base giratória", image: "/images/products/7041-athenas.png" },
-  { name: "Amora", collection: "Dreams", type: "Reclinável", technology: "Apoio lombar", image: "/images/products/7187-amora.png" },
-  { name: "Ayla", collection: "Maya", type: "Poltrona", technology: "Design compacto", image: "/images/products/7400-ayla.png" },
-  { name: "Nora", collection: "Office", type: "Poltrona", technology: "Suporte ergonômico", image: "/images/products/7398-sila.png" },
-  { name: "Maya", collection: "Premium", type: "Reclinável", technology: "Mecanismo silencioso", image: "/images/products/7032-maya-cor-granizo.png" },
-  { name: "Lina", collection: "Essence", type: "Poltrona", technology: "Base em madeira", image: "/images/products/6371-sophi-taupe.png" },
-  { name: "Siena", collection: "Living", type: "Reclinável", technology: "Conforto progressivo", image: "/images/products/6379-aurora.png" },
+  { name: "Mille", slug: "mille-3-2", collection: "Essence", type: "Reclinável", technology: "Reclínio elétrico", image: "/images/products/5841-mille-3-2.jpg" },
+  { name: "Athenas", slug: "athenas", collection: "Living", type: "Poltrona", technology: "Base giratória", image: "/images/products/7041-athenas.png" },
+  { name: "Amora", slug: "amora", collection: "Dreams", type: "Reclinável", technology: "Apoio lombar", image: "/images/products/7187-amora.png" },
+  { name: "Ayla", slug: "ayla", collection: "Maya", type: "Poltrona", technology: "Design compacto", image: "/images/products/7400-ayla.png" },
+  { name: "Nora", slug: "nora", collection: "Office", type: "Poltrona", technology: "Suporte ergonômico", image: "/images/products/7398-sila.png" },
+  { name: "Maya", slug: "maya-cor-granizo", collection: "Premium", type: "Reclinável", technology: "Mecanismo silencioso", image: "/images/products/7032-maya-cor-granizo.png" },
+  { name: "Lina", slug: "lina", collection: "Essence", type: "Poltrona", technology: "Base em madeira", image: "/images/products/6371-sophi-taupe.png" },
+  { name: "Siena", slug: "siena", collection: "Living", type: "Reclinável", technology: "Conforto progressivo", image: "/images/products/6379-aurora.png" },
 ];
 
 const filterLabels = ["Coleção", "Tipo de produto", "Ambiente", "Tecnologia", "Revestimento", "Material", "Cor", "Designer", "Disponibilidade", "Ordenar por"];
@@ -67,7 +67,7 @@ export default function CategoryPage() {
       </div>
       {filtersOpen && <div className="catalog-drawer" role="dialog" aria-modal="true" aria-label="Filtros"><div><button type="button" onClick={() => setFiltersOpen(false)} aria-label="Fechar filtros">×</button><p className="editorial-eyebrow editorial-eyebrow--dark">Filtros</p><h2>Refinar seleção</h2><label>Coleção<select value={collection} onChange={(event) => setCollection(event.target.value)}><option>Todos</option>{collections.map(([name]) => <option key={name}>{name}</option>)}</select></label><label>Tipo de produto<select value={type} onChange={(event) => setType(event.target.value)}><option>Todos</option><option>Reclinável</option><option>Poltrona</option></select></label><button className="drawer-apply" type="button" onClick={() => setFiltersOpen(false)}>Ver produtos</button></div></div>}
       <header className="catalog-grid-head"><p className="editorial-eyebrow editorial-eyebrow--dark">Seleção atual</p><h2 id="catalog-products-title">Modelos para<br /><em>viver melhor.</em></h2></header>
-      <div className="catalog-grid">{visible.map((product) => <a className="catalog-product" href="/produtos/mille" key={product.name}><div className="catalog-product-image"><img src={product.image} alt={`Poltrona ${product.name} Tempus`} /></div><p>{product.collection}</p><h3>{product.name}</h3><small>{product.technology}</small><span>Ver produto <b>→</b></span></a>)}</div>
+      <div className="catalog-grid">{visible.map((product) => <a className="catalog-product" href={`/produtos/${product.slug}`} key={product.name}><div className="catalog-product-image"><img src={product.image} alt={`Poltrona ${product.name} Tempus`} /></div><p>{product.collection}</p><h3>{product.name}</h3><small>{product.technology}</small><span>Ver produto <b>→</b></span></a>)}</div>
       <nav className="catalog-pagination" aria-label="Paginação">{[1, 2, 3, 4].map((number) => <button type="button" className={page === number ? "is-active" : ""} onClick={() => setPage(number)} key={number}>{String(number).padStart(2, "0")}</button>)}</nav>
     </section>
 
