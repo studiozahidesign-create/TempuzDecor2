@@ -2,6 +2,8 @@ import { FormEvent, useEffect, useState } from "react";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
 
+const BANNER_PLACEHOLDER = "/images/banner-placeholder.svg";
+
 const strengths = [
   ["Marca", "Uma empresa posicionada no mercado de conforto e design."],
   ["Portfólio", "Produtos desenvolvidos para diferentes ambientes e necessidades."],
@@ -54,7 +56,7 @@ export default function PartnersPage() {
       </header>
 
       <section className="rep-hero" aria-labelledby="rep-title">
-        <img src="/images/products/3465-lille-2.jpg" alt="Ambiente contemporâneo Tempos" />
+        <img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" />
         <div className="rep-hero-copy"><p className="editorial-eyebrow">Seja um representante</p><h1 id="rep-title">Leve a Tempos<br />para a sua <em>região.</em></h1><p>Estamos ampliando nossa rede de representantes e buscamos parceiros comerciais preparados para construir novos mercados conosco.</p><div className="rep-actions"><a href="#candidatura">Quero representar a Tempos <span>↗</span></a><a href="#oportunidade">Conhecer a oportunidade <span>↓</span></a></div></div>
         <p className="rep-hero-index">01 — Parceiros comerciais</p>
       </section>
@@ -66,7 +68,7 @@ export default function PartnersPage() {
 
       <section className="rep-portfolio" aria-labelledby="portfolio-title"><div className="rep-section-heading"><p className="editorial-eyebrow editorial-eyebrow--dark">Portfólio Tempos</p><h2 id="portfolio-title">Amplitude para<br /><em>novas conversas.</em></h2><p>Um portfólio construído para diferentes momentos e ambientes da casa.</p></div><div className="rep-category-grid">{categories.map(([category, image], index) => <article key={category} className={`rep-category rep-category-${index + 1}`}><img src={image} alt={`Linha de ${category.toLowerCase()} Tempos`} /><div><span>{String(index + 1).padStart(2, "0")}</span><h3>{category}</h3><b>↗</b></div></article>)}</div></section>
 
-      <section className="rep-support" aria-labelledby="support-title"><div className="rep-support-image"><img src="/images/products/7398-sila.png" alt="Mesa com materiais de trabalho" /></div><div><p className="editorial-eyebrow">Estrutura para representantes</p><h2 id="support-title">Você vende.<br />A Tempos dá <em>suporte.</em></h2><ul>{resources.map((resource, index) => <li key={resource}><span>{String(index + 1).padStart(2, "0")}</span><b>{resource}</b><i>↗</i></li>)}</ul></div></section>
+      <section className="rep-support" aria-labelledby="support-title"><div className="rep-support-image"><img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" /></div><div><p className="editorial-eyebrow">Estrutura para representantes</p><h2 id="support-title">Você vende.<br />A Tempos dá <em>suporte.</em></h2><ul>{resources.map((resource, index) => <li key={resource}><span>{String(index + 1).padStart(2, "0")}</span><b>{resource}</b><i>↗</i></li>)}</ul></div></section>
 
       <section className="rep-process" aria-labelledby="process-title"><div><p className="editorial-eyebrow editorial-eyebrow--dark">Como funciona</p><h2 id="process-title">O começo de uma<br /><em>boa parceria.</em></h2></div><ol>{process.map(([name, copy], index) => <li key={name}><span>{String(index + 1).padStart(2, "0")}</span><h3>{name}</h3><p>{copy}</p></li>)}</ol></section>
 
@@ -76,7 +78,7 @@ export default function PartnersPage() {
 
       <section className="rep-application" id="candidatura" aria-labelledby="application-title"><div><p className="editorial-eyebrow editorial-eyebrow--dark">Candidatura</p><h2 id="application-title">Quer representar<br />a <em>Tempos?</em></h2><p>Conte um pouco sobre sua atuação e a região onde trabalha.</p></div><form onSubmit={submit}>{submitted ? <p className="rep-success" role="status">Recebemos suas informações. Em breve, nossa equipe entrará em contato.</p> : <><label><span>Nome</span><input required name="name" /></label><label><span>Empresa</span><input name="company" /></label><label><span>E-mail</span><input required type="email" name="email" /></label><label><span>Telefone</span><input required type="tel" name="phone" /></label><label><span>Cidade</span><input name="city" /></label><label><span>Estado</span><select defaultValue=""><option value="" disabled>Selecione</option><option>AC</option><option>BA</option><option>MG</option><option>PR</option><option>RJ</option><option>RS</option><option>SC</option><option>SP</option></select></label><label><span>Região de atuação</span><input name="region" /></label><label><span>Segmentos em que atua</span><input name="segments" /></label><label><span>Marcas que representa atualmente</span><input name="brands" /></label><label><span>Website / Instagram</span><input name="website" /></label><label className="rep-message"><span>Mensagem</span><textarea name="message" rows={3} /></label><button type="submit">Quero representar a Tempos <span>↗</span></button></>}</form></section>
 
-      <section className="rep-closing"><img src="/images/products/7396-samia.png" alt="Sala sofisticada com mobiliário contemporâneo" /><div><p className="editorial-eyebrow">Próximo passo</p><h2>Vamos crescer <em>juntos.</em></h2><p>Estamos procurando parceiros para construir a próxima etapa da nossa presença no Brasil.</p><a href="#candidatura">Quero ser representante <span>↗</span></a></div></section>
+      <section className="rep-closing"><img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" /><div><p className="editorial-eyebrow">Próximo passo</p><h2>Vamos crescer <em>juntos.</em></h2><p>Estamos procurando parceiros para construir a próxima etapa da nossa presença no Brasil.</p><a href="#candidatura">Quero ser representante <span>↗</span></a></div></section>
       <SiteFooter />
     </main>
   );

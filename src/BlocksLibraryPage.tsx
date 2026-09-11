@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
 
+const BANNER_PLACEHOLDER = "/images/banner-placeholder.svg";
+
 type FileFormat = "3DS" | "DWG" | "FBX" | "OBJ" | "SKP";
 
 type BlocksProduct = {
@@ -73,7 +75,7 @@ export default function BlocksLibraryPage() {
     </header>
 
     <section className="blocks-intro" aria-labelledby="blocks-title">
-      <img src="/images/products/6272-zoe-2.png" alt="Poltrona contemporânea em interior arquitetônico" />
+      <img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" />
       <div className="blocks-intro-shade" />
       <div className="blocks-intro-copy"><p className="editorial-eyebrow">3D Blocks</p><h1 id="blocks-title">Recursos para projetos profissionais.</h1><p>Download Tempos 3D models for professional architectural projects.</p></div>
       <a className="blocks-intro-explore" href="#biblioteca">Explore 3D Blocks <span>↓</span></a>
@@ -84,7 +86,7 @@ export default function BlocksLibraryPage() {
       {filteredProducts.length ? <div className="blocks-product-grid">{filteredProducts.map((product) => <article className="blocks-product" key={product.reference}><button className="blocks-product-preview" type="button" onClick={() => setSelectedProduct(product)} aria-label={`Ver ${product.name}`}><img src={product.image} alt={`Produto ${product.name} em fundo branco`} /></button><div><p>{product.category} <span>{product.reference}</span></p><h3>{product.name}</h3><button type="button" onClick={() => setSelectedProduct(product)}>Download 3D <span>→</span></button></div></article>)}</div> : <div className="blocks-empty"><h3>No products found.</h3><p>Tente ajustar a busca ou os filtros aplicados.</p><button type="button" onClick={clearFilters}>Limpar filtros</button></div>}
     </section>
 
-    <section className="blocks-support" id="suporte" aria-labelledby="support-title"><div><p className="editorial-eyebrow">Suporte profissional</p><h2 id="support-title">Need more <em>information?</em></h2><p>Our professional team can help with technical specifications, materials, dimensions and product information.</p><div><a className="editorial-action editorial-action--light" href="/produtos/mille">Technical information <span>↗</span></a><a className="editorial-action editorial-action--light" href="https://wa.me/" target="_blank" rel="noreferrer">Contact our team <span>↗</span></a></div></div><img src="/images/products/5841-mille-3-2.jpg" alt="Profissional observando arquitetura contemporânea" /></section>
+    <section className="blocks-support" id="suporte" aria-labelledby="support-title"><div><p className="editorial-eyebrow">Suporte profissional</p><h2 id="support-title">Need more <em>information?</em></h2><p>Our professional team can help with technical specifications, materials, dimensions and product information.</p><div><a className="editorial-action editorial-action--light" href="/produtos/mille">Technical information <span>↗</span></a><a className="editorial-action editorial-action--light" href="https://wa.me/" target="_blank" rel="noreferrer">Contact our team <span>↗</span></a></div></div><img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" /></section>
     <SiteFooter />
 
     {selectedProduct && <div className="blocks-modal-backdrop" role="presentation" onMouseDown={() => setSelectedProduct(null)}><section className="blocks-modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-title" onMouseDown={(event) => event.stopPropagation()}><button className="blocks-modal-close" type="button" onClick={() => setSelectedProduct(null)} aria-label="Fechar preview">×</button><div className="blocks-modal-image"><img src={selectedProduct.image} alt={`Produto ${selectedProduct.name}`} /></div><div className="blocks-modal-content"><p className="editorial-eyebrow editorial-eyebrow--dark">{selectedProduct.category} / {selectedProduct.reference}</p><h2 id="modal-product-title">{selectedProduct.name}</h2><p>{selectedProduct.description}</p><div className="blocks-modal-formats"><span>Available formats</span>{selectedProduct.available_formats.map((item) => <a href={selectedProduct.download_links[item]} download={`${selectedProduct.name.toLowerCase().replaceAll(" ", "-")}.${item.toLowerCase()}.txt`} key={item}>Download {item} <b>↓</b></a>)}</div></div></section></div>}

@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
 
+const BANNER_PLACEHOLDER = "/images/banner-placeholder.svg";
+
 type Product = { name: string; collection: string; type: string; image: string; technology?: string };
 
 const collections = [
@@ -52,7 +54,7 @@ export default function CategoryPage() {
 
     <section className="catalog-hero" aria-labelledby="category-title">
       <div className="catalog-hero-copy"><p className="editorial-eyebrow editorial-eyebrow--dark">Coleção / Tempus</p><h1 id="category-title">Poltronas<br /><em>reclináveis.</em></h1><p>Conforto desenvolvido para o cotidiano. Tecnologia, ergonomia e estética atemporal em uma coleção feita para permanecer.</p><span>24 modelos disponíveis</span></div>
-      <div className="catalog-hero-image"><img src="/images/products/7177-allegra.png" alt="Sala contemporânea com poltronas e luz natural" /></div>
+      <div className="catalog-hero-image"><img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" /></div>
     </section>
 
     <section className="catalog-collections" aria-label="Coleções de reclináveis"><div className="catalog-collection-rail">{collections.map(([name, image]) => <button type="button" className={collection === name ? "is-active" : ""} onClick={() => { setCollection(name); setPage(1); }} key={name}><img src={image} alt="" /><span>{name}</span></button>)}</div></section>

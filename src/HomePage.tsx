@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState, type ImgHTMLAttributes } from "react";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
-import heroBanner from "./imports/ChatGPT_Image_9_09_2026__09_05_43.png";
+
+const BANNER_PLACEHOLDER = "/images/banner-placeholder.svg";
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   fill?: boolean;
@@ -117,7 +118,7 @@ export default function Home() {
       </header>
 
       <section className="editorial-hero" id="inicio" aria-label="Tempus Decor">
-        <img className="editorial-hero-image" src={heroBanner} alt="Poltrona reclinável Tempus em sala contemporânea com vista para as montanhas" />
+        <img className="editorial-hero-image" src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" />
         <div className="editorial-hero-shade" />
         <div className="editorial-hero-content">
           <p className="editorial-eyebrow">Tempus Decor / Brasil</p>
@@ -145,7 +146,7 @@ export default function Home() {
 
       <section className="editorial-feature" id="colecoes" aria-labelledby="feature-title">
         <div className="editorial-feature-image">
-          <img src="/images/products/4634-lys.jpg" alt="Interior de estar elegante em tons neutros" />
+          <img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" />
         </div>
         <div className="editorial-feature-copy">
           <p className="editorial-eyebrow editorial-eyebrow--dark">Essence / 01</p>
@@ -190,7 +191,7 @@ export default function Home() {
       </section>
 
       <section className="technology-section" aria-labelledby="technology-title">
-        <div className="technology-visual"><img src="/images/products/3465-lille-2.jpg" alt="Detalhe de estofado e tecido aplicado em uma poltrona" /></div>
+        <div className="technology-visual"><img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" /></div>
         <div className="technology-content">
           <p className="editorial-eyebrow">Tecnologia Tempus</p>
           <h2 id="technology-title">Conforto é uma<br /><em>engenharia silenciosa.</em></h2>
@@ -221,7 +222,7 @@ export default function Home() {
           <p>Camas e colchões criados para transformar o descanso em parte essencial da arquitetura da casa.</p>
           <a className="editorial-action" href="#produtos">Explorar dormitórios <span>↗</span></a>
         </div>
-        <div className="bedroom-image"><img src="/images/products/5777-cama-julia.webp" alt="Quarto contemporâneo com cama e roupas de cama em tons neutros" /></div>
+        <div className="bedroom-image"><img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" /></div>
       </section>
 
       <section className="audience-section" aria-labelledby="audience-title">
@@ -260,12 +261,12 @@ export default function Home() {
       </section>
 
       <section className="company-section" aria-labelledby="company-title">
-        <div className="company-image"><img src="/images/products/6272-zoe-2.png" alt="Artesão trabalhando a madeira em uma oficina" /></div>
+        <div className="company-image"><img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" /></div>
         <div className="company-copy"><p className="editorial-eyebrow editorial-eyebrow--dark">Tempus / Desde o começo</p><h2 id="company-title">Qualidade é aquilo<br />que fica <em>depois do tempo.</em></h2><p>Fabricamos com atenção ao detalhe, inovação responsável e respeito por materiais feitos para acompanhar histórias.</p><div className="company-values"><span><b>01</b>Design com propósito</span><span><b>02</b>Manufatura precisa</span><span><b>03</b>Materiais duráveis</span></div><a className="editorial-action" href="#inicio">Conhecer a Tempus <span>↗</span></a></div>
       </section>
 
       <section className="editorial-support" id="assistencia">
-        <img src="/images/products/5841-mille-3-2.jpg" alt="Sala contemporânea com sofá e estante" />
+        <img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" />
         <div>
           <p className="editorial-eyebrow">Tempus / Atendimento</p>
           <h2>Cuidar faz parte<br />do <em>conforto.</em></h2>
