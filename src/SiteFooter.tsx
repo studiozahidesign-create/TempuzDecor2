@@ -1,95 +1,77 @@
 import TempusLogo from "./imports/Group9";
 
+const footerGroups = [
+  {
+    title: "Navegação",
+    links: [
+      ["Home", "/"], ["Sobre a Tempus", "/sobre"], ["Produtos", "/produtos"], ["Representantes", "/representantes"],
+      ["Assistência", "/assistencia"], ["Blocos 3D", "/blocos-3d"], ["Conteúdos", "/conteudos"], ["Contato", "/contato"],
+    ],
+  },
+  {
+    title: "Produtos",
+    links: [
+      ["Todos os produtos", "/produtos"], ["Poltronas", "/produtos/poltronas"], ["Sofás", "/produtos/sofas"], ["Camas", "/produtos/camas"],
+      ["Tempus Office", "/produtos/tempus-office"], ["Complementos para Poltronas", "/produtos/complementos"], ["Lançamentos", "/produtos?f=lancamentos"],
+    ],
+  },
+  {
+    title: "Tecnologias",
+    links: [
+      ["Tecnologias", "/tecnologias"], ["Unitech", "/tecnologias#unitech"], ["Duotech", "/tecnologias#duotech"],
+      ["Multitech", "/tecnologias#multitech"], ["Fulltech", "/tecnologias#fulltech"],
+    ],
+  },
+  {
+    title: "Profissionais",
+    links: [
+      ["Blocos 3D", "/blocos-3d"], ["Biblioteca BIM", "/biblioteca-bim"], ["Downloads", "/downloads"],
+      ["Especificações Técnicas", "/especificacoes"], ["Atendimento Comercial", "/contato/comercial"],
+    ],
+  },
+  {
+    title: "Comercial",
+    links: [
+      ["Seja Representante", "/seja-representante"], ["Encontre um Representante", "/representantes"], ["Atendimento Comercial", "/contato/comercial"],
+      ["Solicitar Orçamento", "/contato"], ["Trabalhe Conosco", "/carreiras"],
+    ],
+  },
+  {
+    title: "Assistência",
+    links: [
+      ["Assistência Técnica", "/assistencia"], ["Manuais", "/manuais"], ["Garantia", "/garantia"],
+      ["Cuidados com o Produto", "/cuidados"], ["Perguntas Frequentes", "/faq"], ["Falar com o Suporte", "/contato/suporte"],
+    ],
+  },
+] as const;
+
 export default function SiteFooter() {
   return (
-  <footer className="site-footer">
-    <div className="footer-intro">
-      <a className="brand footer-brand brand-logo footer-logo" href="#inicio" aria-label="Tempus, início">
-    <TempusLogo />
-      </a>
-      <p>Poltronas reclináveis que unem conforto, tecnologia e design para ambientes contemporâneos.</p>
-      <div className="footer-contact-actions">
-    <a href="https://wa.me/" target="_blank" rel="noreferrer">WhatsApp comercial <span>↗</span></a>
-    <a href="#assistencia">Solicitar assistência <span>↗</span></a>
+    <footer className="site-footer">
+      <div className="footer-intro">
+        <a className="brand footer-brand brand-logo footer-logo" href="/" aria-label="Tempus, início"><TempusLogo /></a>
+        <p>Conforto, tecnologia e design para acompanhar o tempo de cada ambiente.</p>
+        <div className="footer-contact-actions">
+          <a href="/contato/comercial">Atendimento comercial <span>↗</span></a>
+          <a href="/assistencia">Solicitar assistência <span>↗</span></a>
+        </div>
       </div>
-    </div>
 
-    <div className="footer-directory">
-      <div className="footer-group">
-    <h3>Navegação</h3>
-    <nav>
-      <a href="#inicio">Home</a><a href="#">Sobre Nós</a><a href="#produtos">Produtos</a>
-      <a href="#colecoes">Coleções</a><a href="#profissionais">Revendedores</a>
-      <a href="#assistencia">Assistência</a><a href="#profissionais">Blocos 3D</a>
-      <a href="#">Blog / Vídeos</a><a href="#">Contato</a>
-    </nav>
+      <div className="footer-directory">
+        {footerGroups.map((group) => (
+          <div className="footer-group" key={group.title}>
+            <h3>{group.title}</h3>
+            <nav aria-label={group.title}>
+              {group.links.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
+            </nav>
+          </div>
+        ))}
       </div>
-      <div className="footer-group">
-    <h3>Produtos</h3>
-    <nav>
-      <a href="#produtos">Todos os produtos</a><a href="#">Poltronas reclináveis</a>
-      <a href="#">Poltronas automáticas</a><a href="#">Poltronas com lifting</a>
-      <a href="#">Poltronas com massagem</a><a href="#">Poltronas giratórias</a>
-      <a href="#profissionais">Produtos com Bloco 3D</a><a href="#">Lançamentos</a>
-    </nav>
-      </div>
-      <div className="footer-group">
-    <h3>Coleções</h3>
-    <nav>
-      <a href="#colecoes">Todas as coleções</a><a href="#">Essence</a>
-      <a href="#">Living</a><a href="#">Lounge</a><a href="#">Dreams</a>
-    </nav>
-      </div>
-      <div className="footer-group">
-    <h3>Profissionais</h3>
-    <nav>
-      <a href="#profissionais">Blocos 3D</a><a href="#profissionais">Para arquitetos e designers</a>
-      <a href="#">Biblioteca 3D</a><a href="#">Especificações técnicas</a>
-      <a href="#">Atendimento profissional</a>
-    </nav>
-      </div>
-      <div className="footer-group">
-    <h3>Comercial</h3>
-    <nav>
-      <a href="#profissionais">Seja um revendedor</a><a href="#profissionais">Encontre um representante</a>
-      <a href="#">Atendimento comercial</a><a href="#">Rede de representantes</a>
-      <a href="#">Solicitar contato comercial</a>
-    </nav>
-      </div>
-      <div className="footer-group">
-    <h3>Assistência</h3>
-    <nav>
-      <a href="#assistencia">Assistência técnica</a><a href="#">Manuais</a>
-      <a href="#">Vídeos técnicos</a><a href="#">Garantia</a>
-      <a href="#">Cuidados com o produto</a><a href="#">Falar com suporte</a>
-    </nav>
-      </div>
-    </div>
 
-    <div className="footer-contact">
-      <div>
-    <h3>Contato</h3>
-    <p>WhatsApp comercial <span>Contato a inserir</span></p>
-    <p>WhatsApp assistência <span>Contato a inserir</span></p>
-    <p>E-mail comercial <span>E-mail a inserir</span></p>
-    <p>E-mail de suporte <span>E-mail a inserir</span></p>
+      <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} Tempus</p>
+        <p className="footer-credit">Design para viver melhor.</p>
       </div>
-      <div>
-    <h3>Atendimento</h3>
-    <p>Fábrica / showroom <span>Endereço a inserir</span></p>
-    <p>Horário comercial <span>Horário a inserir</span></p>
-      </div>
-    </div>
-
-    <div className="footer-bottom">
-      <p>© {new Date().getFullYear()} Tempus Decor</p>
-      <nav aria-label="Links legais">
-    <a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a>
-    <a href="#">Política de Garantia</a><a href="#">Política de Cookies</a>
-    <a href="#">LGPD</a><a href="#">Mapa do site</a>
-      </nav>
-      <p className="footer-credit">Design para viver melhor.</p>
-    </div>
-  </footer>
+    </footer>
   );
 }

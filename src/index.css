@@ -253,6 +253,17 @@ h1,h2{margin:0;font-family:var(--font-display),serif;font-weight:500;letter-spac
 .footer-bottom p { margin: 0; color: #777872; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
 .footer-bottom nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px 25px; }
 .footer-bottom a { color: #a4a59f; font-size: 9px; }
+.information-page { background: var(--page); }
+.information-hero { min-height: min(72vh, 48rem); display: flex; flex-direction: column; justify-content: center; padding: clamp(6rem, 12vw, 12rem) max(2rem, 12vw); background: var(--paper); }
+.information-hero h1 { max-width: 14ch; margin: 1.4rem 0 1.8rem; font-family: var(--font-family-primary); font-size: var(--font-display-lg); font-weight: 400; letter-spacing: var(--letter-spacing-display); line-height: var(--line-height-display); }
+.information-hero > p:not(.editorial-eyebrow) { max-width: 38ch; margin: 0 0 2.2rem; color: var(--muted); line-height: var(--line-height-body); }
+.information-hero .editorial-action { align-self: flex-start; }
+.technology-directory { display: grid; grid-template-columns: repeat(4, 1fr); background: #fff; }
+.technology-directory article { min-height: 24rem; padding: clamp(2rem, 4vw, 4rem); border-right: 1px solid var(--line); display: flex; flex-direction: column; justify-content: flex-end; }
+.technology-directory article:last-child { border-right: 0; }
+.technology-directory span { color: var(--muted); font-size: var(--font-label); letter-spacing: var(--letter-spacing-label); }
+.technology-directory h2 { margin: 1.8rem 0 .8rem; font-family: var(--font-family-primary); font-size: var(--font-h2); font-weight: 400; letter-spacing: var(--letter-spacing-display); }
+.technology-directory p { max-width: 24ch; margin: 0; color: var(--muted); line-height: var(--line-height-body); }
 
 @media(max-width:1000px){
   .quiet-hero { grid-template-columns: 42% 58%; grid-template-rows: 1fr; }
@@ -303,6 +314,9 @@ h1,h2{margin:0;font-family:var(--font-display),serif;font-weight:500;letter-spac
   .footer-bottom { grid-template-columns: 1fr; gap: 28px; align-items: start; }
   .footer-bottom nav { justify-content: flex-start; }
   .footer-credit { display: none; }
+  .information-hero { min-height: 68svh; padding: 7rem 1.5rem 4rem; }
+  .technology-directory { grid-template-columns: 1fr; }
+  .technology-directory article { min-height: 18rem; border-right: 0; border-bottom: 1px solid var(--line); }
 }
 
 @media(max-width:420px){

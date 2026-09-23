@@ -11,9 +11,16 @@ import ArticlePage from "./ArticlePage";
 import PartnersPage from "./PartnersPage";
 import BecomeRepresentativePage from "./BecomeRepresentativePage";
 import DesignSystemPage from "./DesignSystemPage";
+import InformationPage from "./InformationPage";
 
 export const router = createBrowserRouter([
   { path: "/", Component: HomePage },
+  { path: "/produtos", Component: CategoryPage },
+  { path: "/produtos/poltronas", Component: CategoryPage },
+  { path: "/produtos/sofas", Component: CategoryPage },
+  { path: "/produtos/camas", Component: CategoryPage },
+  { path: "/produtos/tempus-office", Component: CategoryPage },
+  { path: "/produtos/complementos", Component: CategoryPage },
   { path: "/categorias/reclinaveis", Component: CategoryPage },
   { path: "/produtos/mille", Component: ProductPage },
   { path: "/produtos/:slug", Component: ProductPage },
@@ -26,5 +33,17 @@ export const router = createBrowserRouter([
   { path: "/parceiros", Component: PartnersPage },
   { path: "/seja-representante", Component: BecomeRepresentativePage },
   { path: "/design-system", Component: DesignSystemPage },
+  { path: "/assistencia", Component: InformationPage },
+  { path: "/contato", Component: InformationPage },
+  { path: "/contato/comercial", Component: InformationPage },
+  { path: "/contato/suporte", Component: InformationPage },
+  { path: "/tecnologias", Component: InformationPage },
+  { path: "/biblioteca-bim", Component: InformationPage },
+  { path: "/downloads", Component: InformationPage },
+  { path: "/especificacoes", Component: InformationPage },
+  { path: "/manuais", Component: InformationPage },
+  { path: "/garantia", Component: InformationPage },
+  { path: "/cuidados", Component: InformationPage },
+  { path: "/faq", Component: InformationPage },
   { path: "*", Component: HomePage },
 ]);
