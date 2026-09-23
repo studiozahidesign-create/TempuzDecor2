@@ -14,10 +14,10 @@ const strengths = [
 ];
 
 const categories = [
-  ["Poltronas", "/images/products/5964-jessy-wisky-2.jpg"],
-  ["Sofás", "/images/products/5864-tess.jpg"],
-  ["Camas", "/images/products/5777-cama-julia.webp"],
-  ["Home", "/images/products/4634-lys.jpg"],
+  ["Poltronas", "/images/products/uniform/5964-jessy-wisky-2.png"],
+  ["Sofás", "/images/products/uniform/5864-tess.png"],
+  ["Camas", "/images/products/uniform/5777-cama-julia.png"],
+  ["Home", "/images/products/uniform/4634-lys.png"],
 ];
 
 const resources = ["Materiais comerciais", "Suporte técnico", "Blocos 3D", "Atendimento", "Logística"];

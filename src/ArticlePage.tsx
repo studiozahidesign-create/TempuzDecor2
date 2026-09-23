@@ -9,7 +9,7 @@ const BANNER_PLACEHOLDER = "/images/banner-placeholder.svg";
 export default function ArticlePage() {
   const { slug } = useParams();
   const currentArticle = journalArticles.find((item) => item.slug === slug) ?? journalArticles[1];
-  const article = { ...currentArticle, featured_image: currentArticle.image, summary: currentArticle.description, author: "Journal Tempus", publication_date: currentArticle.date, reading_time: currentArticle.readingTime, gallery: ["/images/products/3750-coralina-taupe.jpg", "/images/products/5777-cama-julia.webp"], seo_title: `${currentArticle.title} | Journal Tempus`, seo_description: currentArticle.description };
+  const article = { ...currentArticle, featured_image: currentArticle.image, summary: currentArticle.description, author: "Journal Tempus", publication_date: currentArticle.date, reading_time: currentArticle.readingTime, gallery: ["/images/products/uniform/3750-coralina-taupe.png", "/images/products/uniform/5777-cama-julia.png"], seo_title: `${currentArticle.title} | Journal Tempus`, seo_description: currentArticle.description };
   const related = journalArticles.filter((item) => item.slug !== article.slug).slice(0, 3);
   const articleIndex = journalArticles.findIndex((item) => item.slug === article.slug);
   const previousArticle = journalArticles[(articleIndex - 1 + journalArticles.length) % journalArticles.length];

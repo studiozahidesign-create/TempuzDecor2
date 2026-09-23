@@ -7,23 +7,23 @@ const BANNER_PLACEHOLDER = "/images/banner-placeholder.svg";
 type Product = { name: string; slug: string; collection: string; type: string; image: string; technology?: string };
 
 const collections = [
-  ["Essence", "/images/products/5841-mille-3-2.jpg"],
-  ["Living", "/images/products/7041-athenas.png"],
-  ["Dreams", "/images/products/7187-amora.png"],
-  ["Maya", "/images/products/6379-aurora.png"],
-  ["Office", "/images/products/7398-sila.png"],
-  ["Premium", "/images/products/6379-aurora.png"],
+  ["Essence", "/images/products/uniform/5841-mille-3-2.png"],
+  ["Living", "/images/products/uniform/7041-athenas.png"],
+  ["Dreams", "/images/products/uniform/7187-amora.png"],
+  ["Maya", "/images/products/uniform/6379-aurora.png"],
+  ["Office", "/images/products/uniform/7398-sila.png"],
+  ["Premium", "/images/products/uniform/6379-aurora.png"],
 ] as const;
 
 const products: Product[] = [
-  { name: "Mille", slug: "mille-3-2", collection: "Essence", type: "Reclinável", technology: "Reclínio elétrico", image: "/images/products/5841-mille-3-2.jpg" },
-  { name: "Athenas", slug: "athenas", collection: "Living", type: "Poltrona", technology: "Base giratória", image: "/images/products/7041-athenas.png" },
-  { name: "Amora", slug: "amora", collection: "Dreams", type: "Reclinável", technology: "Apoio lombar", image: "/images/products/7187-amora.png" },
-  { name: "Ayla", slug: "ayla", collection: "Maya", type: "Poltrona", technology: "Design compacto", image: "/images/products/7400-ayla.png" },
-  { name: "Nora", slug: "nora", collection: "Office", type: "Poltrona", technology: "Suporte ergonômico", image: "/images/products/7398-sila.png" },
-  { name: "Maya", slug: "maya-cor-granizo", collection: "Premium", type: "Reclinável", technology: "Mecanismo silencioso", image: "/images/products/7032-maya-cor-granizo.png" },
-  { name: "Lina", slug: "lina", collection: "Essence", type: "Poltrona", technology: "Base em madeira", image: "/images/products/6371-sophi-taupe.png" },
-  { name: "Siena", slug: "siena", collection: "Living", type: "Reclinável", technology: "Conforto progressivo", image: "/images/products/6379-aurora.png" },
+  { name: "Mille", slug: "mille-3-2", collection: "Essence", type: "Reclinável", technology: "Reclínio elétrico", image: "/images/products/uniform/5841-mille-3-2.png" },
+  { name: "Athenas", slug: "athenas", collection: "Living", type: "Poltrona", technology: "Base giratória", image: "/images/products/uniform/7041-athenas.png" },
+  { name: "Amora", slug: "amora", collection: "Dreams", type: "Reclinável", technology: "Apoio lombar", image: "/images/products/uniform/7187-amora.png" },
+  { name: "Ayla", slug: "ayla", collection: "Maya", type: "Poltrona", technology: "Design compacto", image: "/images/products/uniform/7400-ayla.png" },
+  { name: "Nora", slug: "nora", collection: "Office", type: "Poltrona", technology: "Suporte ergonômico", image: "/images/products/uniform/7398-sila.png" },
+  { name: "Maya", slug: "maya-cor-granizo", collection: "Premium", type: "Reclinável", technology: "Mecanismo silencioso", image: "/images/products/uniform/7032-maya-cor-granizo.png" },
+  { name: "Lina", slug: "lina", collection: "Essence", type: "Poltrona", technology: "Base em madeira", image: "/images/products/uniform/6371-sophi-taupe.png" },
+  { name: "Siena", slug: "siena", collection: "Living", type: "Reclinável", technology: "Conforto progressivo", image: "/images/products/uniform/6379-aurora.png" },
 ];
 
 const filterLabels = ["Coleção", "Tipo de produto", "Ambiente", "Tecnologia", "Revestimento", "Material", "Cor", "Designer", "Disponibilidade", "Ordenar por"];
@@ -71,7 +71,7 @@ export default function CategoryPage() {
       <nav className="catalog-pagination" aria-label="Paginação">{[1, 2, 3, 4].map((number) => <button type="button" className={page === number ? "is-active" : ""} onClick={() => setPage(number)} key={number}>{String(number).padStart(2, "0")}</button>)}</nav>
     </section>
 
-    <section className="related-categories" aria-labelledby="related-title"><header><p className="editorial-eyebrow editorial-eyebrow--dark">Descubra também</p><h2 id="related-title">Outras maneiras de<br /><em>habitar o conforto.</em></h2></header><div>{[["Sofás", "/images/products/7358-emilia.png"], ["Camas", "/images/products/5777-cama-julia.webp"], ["Colchões", "/images/products/7394-martina.png"], ["Acessórios", "/images/products/6388-olivia.png"]].map(([name, image]) => <a href="/categorias/reclinaveis" key={name}><img src={image} alt={`${name} Tempus`} /><span>{name}</span><b>↗</b></a>)}</div></section>
+    <section className="related-categories" aria-labelledby="related-title"><header><p className="editorial-eyebrow editorial-eyebrow--dark">Descubra também</p><h2 id="related-title">Outras maneiras de<br /><em>habitar o conforto.</em></h2></header><div>{[["Sofás", "/images/products/uniform/7358-emilia.png"], ["Camas", "/images/products/uniform/5777-cama-julia.png"], ["Colchões", "/images/products/uniform/7394-martina.png"], ["Acessórios", "/images/products/uniform/6388-olivia.png"]].map(([name, image]) => <a href="/categorias/reclinaveis" key={name}><img src={image} alt={`${name} Tempus`} /><span>{name}</span><b>↗</b></a>)}</div></section>
     <SiteFooter />
   </main>;
 }

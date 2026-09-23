@@ -24,38 +24,38 @@ function Image({ fill, priority, style, onError, ...props }: ImageProps) {
 }
 
 const products = [
-  { name: "Mille", collection: "Essence", image: "/images/products/5841-mille-3-2.jpg", features: "Reclínio automático · Base giratória" },
-  { name: "Athenas", collection: "Living", image: "/images/products/7041-athenas.png", features: "Conforto ergonômico · Design compacto" },
-  { name: "Amora", collection: "Lounge", image: "/images/products/7187-amora.png", features: "Chaise extensível · Dois lugares" },
+  { name: "Mille", collection: "Essence", image: "/images/products/uniform/5841-mille-3-2.png", features: "Reclínio automático · Base giratória" },
+  { name: "Athenas", collection: "Living", image: "/images/products/uniform/7041-athenas.png", features: "Conforto ergonômico · Design compacto" },
+  { name: "Amora", collection: "Lounge", image: "/images/products/uniform/7187-amora.png", features: "Chaise extensível · Dois lugares" },
 ];
 
 const collections = [
-  { number: "01", name: "Essence", description: "Conforto intuitivo para viver todos os dias.", image: "/images/products/5841-mille-3-2.jpg" },
-  { number: "02", name: "Living", description: "Design leve para ambientes contemporâneos.", image: "/images/products/7400-ayla.png" },
-  { number: "03", name: "Lounge", description: "Mais espaço para desacelerar.", image: "/images/products/7187-amora.png" },
-  { number: "04", name: "Dreams", description: "Tecnologia dedicada ao descanso.", image: "/images/products/6629-perola.webp" },
+  { number: "01", name: "Essence", description: "Conforto intuitivo para viver todos os dias.", image: "/images/products/uniform/5841-mille-3-2.png" },
+  { number: "02", name: "Living", description: "Design leve para ambientes contemporâneos.", image: "/images/products/uniform/7400-ayla.png" },
+  { number: "03", name: "Lounge", description: "Mais espaço para desacelerar.", image: "/images/products/uniform/7187-amora.png" },
+  { number: "04", name: "Dreams", description: "Tecnologia dedicada ao descanso.", image: "/images/products/uniform/6629-perola.png" },
 ];
 
 
 const newReleases = [
-  { name: "Mille", slug: "mille-3-2", collection: "Fulltech", image: "/images/products/5841-mille-3-2.jpg", alt: "Poltrona Mille Tempus Decor" },
-  { name: "Athenas", slug: "athenas", collection: "Poltronas Complementos", image: "/images/products/7041-athenas.png", alt: "Poltrona Athenas Tempus Decor" },
-  { name: "Amora", slug: "amora", collection: "Poltronas Complementos", image: "/images/products/7187-amora.png", alt: "Poltrona Amora Tempus Decor" },
-  { name: "Ayla", slug: "ayla", collection: "Poltronas Complementos", image: "/images/products/7400-ayla.png", alt: "Poltrona Ayla Tempus Decor" },
-  { name: "Donna", slug: "donna", collection: "Poltronas Complementos", image: "/images/products/6639-donna.webp", alt: "Poltrona Donna Tempus Decor" },
-  { name: "Sila", slug: "sila", collection: "Poltronas Complementos", image: "/images/products/7398-sila.png", alt: "Poltrona Sila Tempus Decor" },
-  { name: "Aurora", slug: "aurora", collection: "Cama", image: "/images/products/6379-aurora.png", alt: "Cama Aurora Tempus Decor" },
-  { name: "Maya", slug: "maya-cor-granizo", collection: "Fulltech", image: "/images/products/7032-maya-cor-granizo.png", alt: "Poltrona Maya Tempus Decor" },
+  { name: "Mille", slug: "mille-3-2", collection: "Fulltech", image: "/images/products/uniform/5841-mille-3-2.png", alt: "Poltrona Mille Tempus Decor" },
+  { name: "Athenas", slug: "athenas", collection: "Poltronas Complementos", image: "/images/products/uniform/7041-athenas.png", alt: "Poltrona Athenas Tempus Decor" },
+  { name: "Amora", slug: "amora", collection: "Poltronas Complementos", image: "/images/products/uniform/7187-amora.png", alt: "Poltrona Amora Tempus Decor" },
+  { name: "Ayla", slug: "ayla", collection: "Poltronas Complementos", image: "/images/products/uniform/7400-ayla.png", alt: "Poltrona Ayla Tempus Decor" },
+  { name: "Donna", slug: "donna", collection: "Poltronas Complementos", image: "/images/products/uniform/6639-donna.png", alt: "Poltrona Donna Tempus Decor" },
+  { name: "Sila", slug: "sila", collection: "Poltronas Complementos", image: "/images/products/uniform/7398-sila.png", alt: "Poltrona Sila Tempus Decor" },
+  { name: "Aurora", slug: "aurora", collection: "Cama", image: "/images/products/uniform/6379-aurora.png", alt: "Cama Aurora Tempus Decor" },
+  { name: "Maya", slug: "maya-cor-granizo", collection: "Fulltech", image: "/images/products/uniform/7032-maya-cor-granizo.png", alt: "Poltrona Maya Tempus Decor" },
 ];
 
 
 const collectionShowcase = [
-  { number: "01", name: "Poltronas reclináveis", description: "Movimento preciso para o descanso diário.", href: "/categorias/reclinaveis", image: "/images/products/5841-mille-3-2.jpg", alt: "Poltrona reclinável em composição clara" },
-  { number: "02", name: "Living", description: "Peças para receber e permanecer.", href: "/categorias/reclinaveis", image: "/images/products/3750-coralina-taupe.jpg", alt: "Sala de estar contemporânea" },
-  { number: "03", name: "Dormitórios", description: "Acolhimento pensado para a noite.", href: "/categorias/reclinaveis", image: "/images/products/5777-cama-julia.webp", alt: "Quarto com cama e roupas de cama neutras" },
-  { number: "04", name: "Camas", description: "Presença, proporção e conforto.", href: "/categorias/reclinaveis", image: "/images/products/5777-cama-julia.webp", alt: "Cama contemporânea em quarto amplo" },
-  { number: "05", name: "Colchões", description: "Suporte que acompanha o corpo.", href: "/categorias/reclinaveis", image: "/images/products/5964-jessy-wisky-2.jpg", alt: "Cama com roupa de cama clara" },
-  { number: "06", name: "Acessórios", description: "Detalhes que completam o ambiente.", href: "/categorias/reclinaveis", image: "/images/products/5864-tess.jpg", alt: "Objeto decorativo em ambiente minimalista" },
+  { number: "01", name: "Poltronas reclináveis", description: "Movimento preciso para o descanso diário.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5841-mille-3-2.png", alt: "Poltrona reclinável em composição clara" },
+  { number: "02", name: "Living", description: "Peças para receber e permanecer.", href: "/categorias/reclinaveis", image: "/images/products/uniform/3750-coralina-taupe.png", alt: "Sala de estar contemporânea" },
+  { number: "03", name: "Dormitórios", description: "Acolhimento pensado para a noite.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5777-cama-julia.png", alt: "Quarto com cama e roupas de cama neutras" },
+  { number: "04", name: "Camas", description: "Presença, proporção e conforto.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5777-cama-julia.png", alt: "Cama contemporânea em quarto amplo" },
+  { number: "05", name: "Colchões", description: "Suporte que acompanha o corpo.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5964-jessy-wisky-2.png", alt: "Cama com roupa de cama clara" },
+  { number: "06", name: "Acessórios", description: "Detalhes que completam o ambiente.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5864-tess.png", alt: "Objeto decorativo em ambiente minimalista" },
 ];
 
 export default function Home() {
@@ -176,15 +176,15 @@ export default function Home() {
         </header>
         <div className="editorial-product-grid">
           <a className="catalogue-product catalogue-product--tall" href="#assistencia">
-            <div className="catalogue-product-image"><img src="/images/products/5841-mille-3-2.jpg" alt="Poltrona de madeira clara em fundo branco" /></div>
+            <div className="catalogue-product-image"><img src="/images/products/uniform/5841-mille-3-2.png" alt="Poltrona de madeira clara em fundo branco" /></div>
             <div className="catalogue-product-meta"><span>01</span><h3>Mille</h3><p>Essence</p><b>↗</b></div>
           </a>
           <a className="catalogue-product" href="#assistencia">
-            <div className="catalogue-product-image"><img src="/images/products/7041-athenas.png" alt="Poltrona de couro escuro com estrutura metálica" /></div>
+            <div className="catalogue-product-image"><img src="/images/products/uniform/7041-athenas.png" alt="Poltrona de couro escuro com estrutura metálica" /></div>
             <div className="catalogue-product-meta"><span>02</span><h3>Athenas</h3><p>Living</p><b>↗</b></div>
           </a>
           <a className="catalogue-product catalogue-product--wide" href="#assistencia">
-            <div className="catalogue-product-image"><img src="/images/products/7187-amora.png" alt="Poltrona estofada em tom areia sobre fundo branco" /></div>
+            <div className="catalogue-product-image"><img src="/images/products/uniform/7187-amora.png" alt="Poltrona estofada em tom areia sobre fundo branco" /></div>
             <div className="catalogue-product-meta"><span>03</span><h3>Amora</h3><p>Lounge</p><b>↗</b></div>
           </a>
         </div>
@@ -212,7 +212,7 @@ export default function Home() {
           <p>Couros, tecidos e mecanismos escolhidos para revelar conforto com precisão silenciosa.</p>
           <a className="editorial-action" href="#profissionais">Conhecer materiais <span>↗</span></a>
         </div>
-        <div className="editorial-material-image"><img src="/images/products/6371-sophi-taupe.png" alt="Textura de couro marrom matelassê" /></div>
+        <div className="editorial-material-image"><img src="/images/products/uniform/6371-sophi-taupe.png" alt="Textura de couro marrom matelassê" /></div>
       </section>
 
       <section className="bedroom-section" aria-labelledby="bedroom-title">
@@ -246,15 +246,15 @@ export default function Home() {
         </div>
         <div className="ecosystem-panels" id="representantes">
           <a className="ecosystem-panel ecosystem-panel--representatives" href="#representantes">
-            <img src="/images/products/7398-sila.png" alt="Ambiente de showroom de mobiliário contemporâneo" />
+            <img src="/images/products/uniform/7398-sila.png" alt="Ambiente de showroom de mobiliário contemporâneo" />
             <div><span>01</span><h3>Representantes nacionais</h3><p>Encontre quem conhece a Tempus e acompanha a sua escolha de perto.</p><b>Encontrar um representante <i>↗</i></b></div>
           </a>
           <a className="ecosystem-panel ecosystem-panel--professionals" href="#profissionais">
-            <img src="/images/products/7396-samia.png" alt="Profissional organizando amostras e materiais de projeto" />
+            <img src="/images/products/uniform/7396-samia.png" alt="Profissional organizando amostras e materiais de projeto" />
             <div><span>02</span><h3>Arquitetos & designers</h3><p>Blocos 3D, materiais e informações para especificar com liberdade.</p><b>Recursos profissionais <i>↗</i></b></div>
           </a>
           <a className="ecosystem-panel ecosystem-panel--technical" href="#assistencia">
-            <img src="/images/products/7346-ada-2.png" alt="Detalhe de acabamento e marcenaria de mobiliário" />
+            <img src="/images/products/uniform/7346-ada-2.png" alt="Detalhe de acabamento e marcenaria de mobiliário" />
             <div><span>03</span><h3>Suporte técnico</h3><p>Informação precisa para cada detalhe, do projeto ao uso contínuo.</p><b>Informações técnicas <i>↗</i></b></div>
           </a>
         </div>

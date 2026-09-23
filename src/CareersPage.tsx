@@ -12,7 +12,7 @@ const positions: Position[] = [
 ];
 
 const principles = [["01", "Curiosidade", "Buscamos entender antes de criar."], ["02", "Precisão", "Cuidamos dos detalhes que fazem diferença."], ["03", "Colaboração", "Boas soluções são construídas em conjunto."], ["04", "Responsabilidade", "Cada decisão tem impacto no produto e na experiência."]];
-const teamPhotos = ["/images/products/7041-athenas.png", "/images/products/7187-amora.png", "/images/products/7400-ayla.png"];
+const teamPhotos = ["/images/products/uniform/7041-athenas.png", "/images/products/uniform/7187-amora.png", "/images/products/uniform/7400-ayla.png"];
 
 export default function CareersPage() {
   const [headerScrolled, setHeaderScrolled] = useState(false);

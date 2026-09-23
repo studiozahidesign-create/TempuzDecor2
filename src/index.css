@@ -2797,6 +2797,20 @@ h1, h2, h3, h4, h5, h6, p, a, span, small, strong, b, em, i, label, option {
 }
 
 /* Shared editorial CTA: underline follows the action instead of the content column. */
+:root { --product-photo-background: #f7f7f7; }
+
+/* Product photography has one surface across catalogue, home and galleries.
+   Normal blending preserves the original upholstery and metal colours. */
+img[src*="/images/products/"] {
+  background-color: var(--product-photo-background) !important;
+  mix-blend-mode: normal !important;
+}
+:is(.catalogue-product-image, .release-image, .catalog-product-image,
+    .release-showcase-image, .blocks-product-preview, .blocks-modal-image,
+    .product-material-preview, .product-gallery-main) {
+  background-color: var(--product-photo-background);
+}
+
 a.editorial-action,
 button.editorial-action {
   display: inline-flex;

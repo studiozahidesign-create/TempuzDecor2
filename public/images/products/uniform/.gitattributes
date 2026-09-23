@@ -1,0 +1,2 @@
+# Keep web-ready product assets directly available to Figma and static builds.
+*.png -filter -diff -merge -text
