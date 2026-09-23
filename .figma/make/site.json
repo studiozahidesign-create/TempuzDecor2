@@ -1,0 +1,10 @@
+{
+  "description": "This web application offers a user-friendly interface for managing and customizing home decor projects, catering to homeowners and interior designers.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

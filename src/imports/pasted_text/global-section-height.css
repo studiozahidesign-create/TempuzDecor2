@@ -1,0 +1,226 @@
+# GLOBAL SITE-WIDE SECTION HEIGHT STANDARDIZATION
+
+Apply this change **across the entire website**, not only on the current page.
+
+This is a **global layout rule** that must be consistently applied to every page and every primary section of the website.
+
+Do not treat this as a page-specific adjustment.
+
+---
+
+## GLOBAL RULE
+
+Across the entire website:
+
+> **Every primary content section should default to one full browser viewport in height.**
+
+The default implementation should be:
+
+`min-height: 100svh`
+
+This rule must be applied consistently across:
+
+* Homepage
+* Internal pages
+* Landing pages
+* Product pages
+* Service pages
+* About pages
+* Contact pages
+* Blog/editorial pages
+* Campaign pages
+* Any other existing or future page using the same section architecture
+
+---
+
+## IMPORTANT
+
+Do not simply modify the current page.
+
+Identify the **global section/container styles, components, templates, layout primitives, or shared classes** responsible for section sizing and update them at the system level whenever possible.
+
+The goal is to create a reusable global rule.
+
+If multiple implementations currently control section heights, consolidate them where appropriate instead of manually fixing every individual section.
+
+---
+
+## GLOBAL DEFAULT
+
+Primary sections should use:
+
+```css id="wq9j1k"
+min-height: 100svh;
+```
+
+The section must remain capable of growing naturally when its content requires more space.
+
+Never enforce:
+
+```css id="a7z6fe"
+height: 100vh;
+```
+
+as a rigid global rule.
+
+---
+
+## GLOBAL EXCEPTION
+
+The `100svh` rule is the **default**, not an absolute constraint.
+
+A section may exceed one viewport when:
+
+* Its content naturally requires more space
+* The visual composition intentionally extends beyond the viewport
+* A large visual asset requires additional height
+* The section contains complex compositions
+* The experience intentionally uses scroll
+* The design benefits from additional vertical space
+
+In these cases:
+
+`min-height: 100svh`
+
+should remain the baseline, while the section is allowed to grow naturally.
+
+---
+
+## DO NOT FIX PAGE BY PAGE
+
+Do not solve this by manually adding:
+
+```css
+min-height: 100svh;
+```
+
+to dozens of unrelated sections if they are controlled by a shared component or layout system.
+
+First identify:
+
+* Global section components
+* Shared layout components
+* Section wrappers
+* Page templates
+* Utility classes
+* CSS variables
+* Design tokens
+* Tailwind utilities
+* Global CSS
+* Component-level styles
+
+Apply the rule at the highest appropriate level.
+
+Only create individual exceptions when a specific section genuinely requires different behavior.
+
+---
+
+## RESPONSIVE GLOBAL RULE
+
+The same principle must apply across all breakpoints.
+
+### Desktop
+
+Primary sections:
+
+`min-height: 100svh`
+
+### Tablet
+
+Primary sections:
+
+`min-height: 100svh`
+
+### Mobile
+
+Primary sections:
+
+`min-height: 100svh`
+
+However, all breakpoints must allow natural growth when content exceeds the viewport.
+
+Do not force mobile content into a fixed viewport height.
+
+---
+
+## FUTURE-PROOF THE SYSTEM
+
+This must become part of the site's layout system.
+
+Any new primary section created in the future should automatically inherit the same behavior whenever it uses the standard section component/layout primitive.
+
+The goal is:
+
+**Standard Section Component → 100svh minimum by default**
+
+rather than:
+
+**Every individual section → manually configured to 100svh**
+
+---
+
+## AUDIT THE ENTIRE WEBSITE
+
+Before finishing, inspect every existing page.
+
+Identify all primary sections that currently use:
+
+* Fixed heights
+* `100vh`
+* Arbitrary pixel heights
+* Viewport calculations
+* Excessive vertical padding
+* Section-specific height hacks
+* Overflow clipping
+* JavaScript-based height calculations
+
+Determine whether each implementation should be replaced by the global section-height rule.
+
+---
+
+## PRESERVE INTENTIONAL EXCEPTIONS
+
+Do not destroy existing visual compositions simply to enforce the rule.
+
+If a section intentionally needs to exceed the viewport, preserve it.
+
+Document the exception in the code when appropriate.
+
+Example:
+
+```css id="k4z3qx"
+.section--large-visual {
+  min-height: 100svh;
+  /* Intentional additional height for visual composition */
+}
+```
+
+The exception should be intentional and understandable, not accidental.
+
+---
+
+# FINAL REQUIREMENT
+
+This is a **global website-level change**.
+
+Do not consider the task complete until the section-height behavior has been reviewed across the entire website.
+
+The final system should follow this hierarchy:
+
+**GLOBAL SECTION RULE**
+
+`min-height: 100svh`
+
+↓
+
+**SECTION CONTENT**
+
+Natural height when required
+
+↓
+
+**INTENTIONAL EXCEPTIONS**
+
+Only when justified by the visual or functional design
+
+The objective is to establish a consistent site-wide vertical rhythm without compromising content, responsiveness, or existing visual compositions.

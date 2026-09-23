@@ -1,0 +1,38 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import TempusLogo from "./BrandLogo";
+import SiteFooter from "./SiteFooter";
+import { journalArticles } from "./journalData";
+
+
+
+export default function ArticlePage() {
+  const { slug } = useParams();
+  const currentArticle = journalArticles.find((item) => item.slug === slug) ?? journalArticles[1];
+  const article = { ...currentArticle, featured_image: currentArticle.image, summary: currentArticle.description, author: "Journal Tempus", publication_date: currentArticle.date, reading_time: currentArticle.readingTime, gallery: ["https://images.unsplash.com/photo-1618220179428-22790b461013?w=1800&h=1200&fit=crop&auto=format", "https://images.unsplash.com/photo-1599933345241-2d01fe8d06ec?w=1800&h=1200&fit=crop&auto=format"], seo_title: `${currentArticle.title} | Journal Tempus`, seo_description: currentArticle.description };
+  const related = journalArticles.filter((item) => item.slug !== article.slug).slice(0, 3);
+  const articleIndex = journalArticles.findIndex((item) => item.slug === article.slug);
+  const previousArticle = journalArticles[(articleIndex - 1 + journalArticles.length) % journalArticles.length];
+  const nextArticle = journalArticles[(articleIndex + 1) % journalArticles.length];
+  const [headerScrolled, setHeaderScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  useEffect(() => { const onScroll = () => setHeaderScrolled(window.scrollY > 12); onScroll(); window.addEventListener("scroll", onScroll, { passive: true }); return () => window.removeEventListener("scroll", onScroll); }, []);
+  const copyLink = async () => { await navigator.clipboard?.writeText(window.location.href); setCopied(true); window.setTimeout(() => setCopied(false), 1800); };
+  const shareText = encodeURIComponent(`${article.title} — Journal Tempus`);
+  const shareUrl = encodeURIComponent(typeof window !== "undefined" ? window.location.href : "");
+
+  return <main className="page-shell article-page">
+    <header className={headerScrolled ? "minimal-header is-scrolled" : "minimal-header"}><a className="brand brand-logo" href="/" aria-label="Tempus, início"><TempusLogo /></a><nav className={menuOpen ? "minimal-nav is-open" : "minimal-nav"} aria-label="Navegação principal"><a href="/categorias/reclinaveis" onClick={() => setMenuOpen(false)}>Produtos</a><a href="/sobre" onClick={() => setMenuOpen(false)}>Sobre nós</a><a href="/conteudos" onClick={() => setMenuOpen(false)}>Conteúdos</a><a href="/blocos-3d" onClick={() => setMenuOpen(false)}>Blocos 3D</a><a href="/representantes" onClick={() => setMenuOpen(false)}>Representantes</a><a href="/seja-representante" onClick={() => setMenuOpen(false)}>Seja representante</a><a href="/parceiros" onClick={() => setMenuOpen(false)}>Parceiros</a><a href="/carreiras" onClick={() => setMenuOpen(false)}>Carreiras</a></nav><a className="quiet-cta" href="https://wa.me/" target="_blank" rel="noreferrer">Fale conosco <span>↗</span></a><button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button></header>
+
+    <section className="article-hero" aria-labelledby="article-title"><img src={article.featured_image} alt="Poltrona contemporânea em ambiente residencial" /><div><p className="editorial-eyebrow">{article.category}</p><h1 id="article-title">{article.title}</h1><p>{article.summary}</p></div></section>
+    <section className="article-meta"><div><span>{article.category}</span><span>{article.publication_date}</span><span>{article.reading_time}</span></div><nav aria-label="Compartilhar artigo"><a href={`https://wa.me/?text=${shareText}%20${shareUrl}`} target="_blank" rel="noreferrer">WhatsApp ↗</a><a href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`} target="_blank" rel="noreferrer">LinkedIn ↗</a><button type="button" onClick={copyLink}>{copied ? "Link copiado" : "Copiar link"} ↗</button></nav></section>
+
+    <article className="article-reading"><p>O conforto costuma aparecer no fim de uma conversa sobre mobiliário. Como uma característica a ser adicionada depois de definir forma, material e proporção. Mas, em um projeto que observa com atenção a vida cotidiana, ele está presente desde o começo.</p><p>Conforto não se resume à maciez de uma superfície ou à possibilidade de reclinar. Ele começa na relação entre o corpo e o espaço, na maneira como uma peça recebe quem chega e na liberdade de permanecer sem precisar se adaptar o tempo todo.</p><h2>Desenhar para o tempo de cada pessoa.</h2><p>Todo ambiente tem um ritmo próprio. Há espaços de encontro, de pausa, de trabalho concentrado e de descanso. O papel do design é perceber essas diferenças e criar objetos que acompanhem esses momentos com naturalidade.</p><figure className="article-image-wide"><img src={article.gallery[0]} alt="Interior contemporâneo com mobiliário e iluminação natural" /><figcaption>Proporção e matéria definem como uma peça se integra à paisagem da casa.</figcaption></figure><p>Quando desenho, ergonomia e tecnologia trabalham juntos, o produto deixa de pedir atenção para si. Ele passa a apoiar a experiência do ambiente, tornando os gestos mais simples e os momentos mais presentes.</p><blockquote>“Conforto não é apenas uma característica. É parte da experiência de um espaço.”</blockquote><h2>Tecnologia em silêncio.</h2><p>As soluções técnicas mais consistentes são aquelas que resolvem uma necessidade sem dominar a cena. Um movimento preciso, um ajuste intuitivo ou uma estrutura bem construída podem existir de forma quase invisível, mas mudam inteiramente a forma como uma peça é vivida.</p><figure className="article-image-inline"><img src={article.gallery[1]} alt="Detalhe de textura e acabamento de estofado" /><figcaption>Materiais e acabamento são escolhas que também comunicam cuidado.</figcaption></figure><h3>O que permanece.</h3><p><strong>Projetar para o cotidiano</strong> significa aceitar que os objetos serão tocados, usados, deslocados e compartilhados. É por isso que buscamos decisões que façam sentido não apenas no primeiro olhar, mas ao longo do tempo.</p><ul><li>Forma pensada para o uso real.</li><li>Materiais escolhidos para acompanhar histórias.</li><li>Tecnologia aplicada quando melhora a experiência.</li></ul><p>É nessa continuidade entre ideia, matéria e uso que o conforto se torna parte do projeto — e não apenas uma promessa associada a ele.</p></article>
+
+    <nav className="article-navigation" aria-label="Navegação entre artigos"><a href={`/conteudos/${previousArticle.slug}`}><span>← Artigo anterior</span><b>{previousArticle.title}</b></a><a href={`/conteudos/${nextArticle.slug}`}><span>Próximo artigo →</span><b>{nextArticle.title}</b></a></nav>
+    <section className="article-related" aria-labelledby="related-title"><header><p className="editorial-eyebrow editorial-eyebrow--dark">Continue lendo</p><h2 id="related-title">Mais para <em>descobrir.</em></h2></header><div>{related.map((item) => <a href={`/conteudos/${item.slug}`} key={item.title}><img src={item.image} alt="" /><p>{item.category}<time>{item.date}</time></p><h3>{item.title}</h3><span>Ler artigo ↗</span></a>)}</div></section>
+    <section className="article-closing"><div><h2>Continue por <em>perto.</em></h2><p>Explore mais conteúdos sobre design, arquitetura, tecnologia e novas formas de viver.</p><a className="editorial-action" href="/conteudos">Voltar para conteúdos <span>↗</span></a></div></section>
+    <SiteFooter />
+  </main>;
+}
