@@ -250,7 +250,7 @@ export default function Home() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Tempus Decor</p>
+          <p>© {new Date().getFullYear()} Tempus</p>
           <nav aria-label="Links legais">
             <a href="#">Política de Privacidade</a><a href="#">Termos de Uso</a>
             <a href="#">Política de Garantia</a><a href="#">Política de Cookies</a>

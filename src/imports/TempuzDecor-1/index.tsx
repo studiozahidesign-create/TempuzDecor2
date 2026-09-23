@@ -116,7 +116,7 @@ function Container() {
 function Paragraph() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-[780px]" data-name="Paragraph">
-      <p className="[word-break:break-word] font-['Manrope:Medium',sans-serif] font-medium leading-[14.85px] relative shrink-0 text-[#f8f7f3] text-[11px] tracking-[1.32px] uppercase whitespace-nowrap">Tempus Decor / Brasil</p>
+      <p className="[word-break:break-word] font-['Manrope:Medium',sans-serif] font-medium leading-[14.85px] relative shrink-0 text-[#f8f7f3] text-[11px] tracking-[1.32px] uppercase whitespace-nowrap">Tempus / Brasil</p>
     </div>
   );
 }
@@ -189,7 +189,7 @@ function Container1() {
 
 function SectionTempusDecor() {
   return (
-    <div className="bg-[#3b3934] h-[813px] min-h-[813px] overflow-clip relative shrink-0 w-full" data-name="Section - Tempus Decor">
+    <div className="bg-[#3b3934] h-[813px] min-h-[813px] overflow-clip relative shrink-0 w-full" data-name="Section - Tempus">
       <ImageSalaDeEstarContemporaneaComChaiseProximaAJanela />
       <Container />
       <Container1 />
@@ -1576,7 +1576,7 @@ function ContainerMargin2() {
 function Paragraph16() {
   return (
     <div className="col-1 content-stretch flex flex-col h-[13px] items-start justify-self-stretch relative row-1 self-end shrink-0" data-name="Paragraph">
-      <p className="[word-break:break-word] font-['Manrope:Regular',sans-serif] font-normal leading-[normal] relative shrink-0 text-[#777872] text-[9px] tracking-[0.72px] uppercase whitespace-nowrap">© 2026 Tempus Decor</p>
+      <p className="[word-break:break-word] font-['Manrope:Regular',sans-serif] font-normal leading-[normal] relative shrink-0 text-[#777872] text-[9px] tracking-[0.72px] uppercase whitespace-nowrap">© 2026 Tempus</p>
     </div>
   );
 }

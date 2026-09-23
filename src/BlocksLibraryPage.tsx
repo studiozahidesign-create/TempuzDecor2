@@ -20,7 +20,7 @@ type BlocksProduct = {
   order: number;
 };
 
-const fileLink = (product: string, format: FileFormat) => `data:text/plain;charset=utf-8,${encodeURIComponent(`Tempus Decor — ${product}\nFormato: ${format}\n\nArquivo demonstrativo. Substitua este link pelo arquivo 3D oficial.`)}`;
+const fileLink = (product: string, format: FileFormat) => `data:text/plain;charset=utf-8,${encodeURIComponent(`Tempus — ${product}\nFormato: ${format}\n\nArquivo demonstrativo. Substitua este link pelo arquivo 3D oficial.`)}`;
 
 const blocksProducts: BlocksProduct[] = [
   { name: "Mille", category: "Poltronas reclináveis", type: "Poltrona", reference: "MIL-01", image: "/images/products/uniform/5841-mille-3-2.png", description: "Poltrona reclinável com conforto integrado para ambientes contemporâneos.", available_formats: ["SKP", "3DS", "OBJ"], download_links: {}, featured: true, searchable: true, order: 1 },

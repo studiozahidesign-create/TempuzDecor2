@@ -40,14 +40,14 @@ const collections = [
 
 
 const newReleases = [
-  { name: "Mille", slug: "mille-3-2", collection: "Fulltech", image: "/images/products/uniform/5841-mille-3-2.png", alt: "Poltrona Mille Tempus Decor" },
-  { name: "Athenas", slug: "athenas", collection: "Poltronas Complementos", image: "/images/products/uniform/7041-athenas.png", alt: "Poltrona Athenas Tempus Decor" },
-  { name: "Amora", slug: "amora", collection: "Poltronas Complementos", image: "/images/products/uniform/7187-amora.png", alt: "Poltrona Amora Tempus Decor" },
-  { name: "Ayla", slug: "ayla", collection: "Poltronas Complementos", image: "/images/products/uniform/7400-ayla.png", alt: "Poltrona Ayla Tempus Decor" },
-  { name: "Donna", slug: "donna", collection: "Poltronas Complementos", image: "/images/products/uniform/6639-donna.png", alt: "Poltrona Donna Tempus Decor" },
-  { name: "Sila", slug: "sila", collection: "Poltronas Complementos", image: "/images/products/uniform/7398-sila.png", alt: "Poltrona Sila Tempus Decor" },
-  { name: "Aurora", slug: "aurora", collection: "Cama", image: "/images/products/uniform/6379-aurora.png", alt: "Cama Aurora Tempus Decor" },
-  { name: "Maya", slug: "maya-cor-granizo", collection: "Fulltech", image: "/images/products/uniform/7032-maya-cor-granizo.png", alt: "Poltrona Maya Tempus Decor" },
+  { name: "Mille", slug: "mille-3-2", collection: "Fulltech", image: "/images/products/uniform/5841-mille-3-2.png", alt: "Poltrona Mille Tempus" },
+  { name: "Athenas", slug: "athenas", collection: "Poltronas Complementos", image: "/images/products/uniform/7041-athenas.png", alt: "Poltrona Athenas Tempus" },
+  { name: "Amora", slug: "amora", collection: "Poltronas Complementos", image: "/images/products/uniform/7187-amora.png", alt: "Poltrona Amora Tempus" },
+  { name: "Ayla", slug: "ayla", collection: "Poltronas Complementos", image: "/images/products/uniform/7400-ayla.png", alt: "Poltrona Ayla Tempus" },
+  { name: "Donna", slug: "donna", collection: "Poltronas Complementos", image: "/images/products/uniform/6639-donna.png", alt: "Poltrona Donna Tempus" },
+  { name: "Sila", slug: "sila", collection: "Poltronas Complementos", image: "/images/products/uniform/7398-sila.png", alt: "Poltrona Sila Tempus" },
+  { name: "Aurora", slug: "aurora", collection: "Cama", image: "/images/products/uniform/6379-aurora.png", alt: "Cama Aurora Tempus" },
+  { name: "Maya", slug: "maya-cor-granizo", collection: "Fulltech", image: "/images/products/uniform/7032-maya-cor-granizo.png", alt: "Poltrona Maya Tempus" },
 ];
 
 
@@ -117,11 +117,11 @@ export default function Home() {
         <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
       </header>
 
-      <section className="editorial-hero" id="inicio" aria-label="Tempus Decor">
+      <section className="editorial-hero" id="inicio" aria-label="Tempus">
         <img className="editorial-hero-image" src={HOME_HERO_IMAGE} alt="Poltrona reclinável Tempus em ambiente com vista para montanhas" />
         <div className="editorial-hero-shade" />
         <div className="editorial-hero-content">
-          <p className="editorial-eyebrow">Tempus Decor / Brasil</p>
+          <p className="editorial-eyebrow">Tempus / Brasil</p>
           <h1>O tempo<br />em <em>conforto.</em></h1>
           <p className="editorial-hero-lead">Poltronas concebidas para tornar a pausa mais presente.</p>
           <a className="editorial-action editorial-action--light" href="#produtos">Conhecer a coleção <span>↗</span></a>
