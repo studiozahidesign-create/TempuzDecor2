@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState, type ImgHTMLAttributes } from "react";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
+import essenceBanner from "./assets/banner-essence.png";
 
 const BANNER_PLACEHOLDER = "/images/banner-placeholder.svg";
+const HOME_HERO_IMAGE = "/images/home/banner-principal.png";
 
 type ImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   fill?: boolean;
@@ -50,12 +52,10 @@ const newReleases = [
 
 
 const collectionShowcase = [
-  { number: "01", name: "Poltronas reclináveis", description: "Movimento preciso para o descanso diário.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5841-mille-3-2.png", alt: "Poltrona reclinável em composição clara" },
-  { number: "02", name: "Living", description: "Peças para receber e permanecer.", href: "/categorias/reclinaveis", image: "/images/products/uniform/3750-coralina-taupe.png", alt: "Sala de estar contemporânea" },
-  { number: "03", name: "Dormitórios", description: "Acolhimento pensado para a noite.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5777-cama-julia.png", alt: "Quarto com cama e roupas de cama neutras" },
-  { number: "04", name: "Camas", description: "Presença, proporção e conforto.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5777-cama-julia.png", alt: "Cama contemporânea em quarto amplo" },
-  { number: "05", name: "Colchões", description: "Suporte que acompanha o corpo.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5964-jessy-wisky-2.png", alt: "Cama com roupa de cama clara" },
-  { number: "06", name: "Acessórios", description: "Detalhes que completam o ambiente.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5864-tess.png", alt: "Objeto decorativo em ambiente minimalista" },
+  { number: "01", name: "Camas", description: "Presença, proporção e conforto para a noite.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5777-cama-julia.png", alt: "Cama contemporânea em composição clara" },
+  { number: "02", name: "Poltronas", description: "Conforto preciso para desacelerar todos os dias.", href: "/categorias/reclinaveis", image: "/images/products/uniform/5841-mille-3-2.png", alt: "Poltrona reclinável em fundo claro" },
+  { number: "03", name: "Tempus Office", description: "Ergonomia e presença para o espaço de trabalho.", href: "/categorias/reclinaveis", image: "/images/products/uniform/7398-sila.png", alt: "Poltrona para espaço de trabalho" },
+  { number: "04", name: "Poltronas Complementos", description: "Peças que completam a casa com personalidade.", href: "/categorias/reclinaveis", image: "/images/products/uniform/7041-athenas.png", alt: "Poltrona complementar em fundo claro" },
 ];
 
 export default function Home() {
@@ -89,7 +89,7 @@ export default function Home() {
     const rail = collectionRailRef.current;
     if (!rail) return;
     const maxScroll = Math.max(rail.scrollWidth - rail.clientWidth, 1);
-    setCollectionSlide(Math.min(5, Math.max(0, Math.round((rail.scrollLeft / maxScroll) * 5))));
+    setCollectionSlide(Math.min(collectionShowcase.length - 1, Math.max(0, Math.round((rail.scrollLeft / maxScroll) * (collectionShowcase.length - 1)))));
   };
 
   useEffect(() => {
@@ -118,7 +118,7 @@ export default function Home() {
       </header>
 
       <section className="editorial-hero" id="inicio" aria-label="Tempus Decor">
-        <img className="editorial-hero-image" src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" />
+        <img className="editorial-hero-image" src={HOME_HERO_IMAGE} alt="Poltrona reclinável Tempus em ambiente com vista para montanhas" />
         <div className="editorial-hero-shade" />
         <div className="editorial-hero-content">
           <p className="editorial-eyebrow">Tempus Decor / Brasil</p>
@@ -146,7 +146,7 @@ export default function Home() {
 
       <section className="editorial-feature" id="colecoes" aria-labelledby="feature-title">
         <div className="editorial-feature-image">
-          <img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" />
+          <img src={essenceBanner} alt="Poltrona reclinável em ambiente acolhedor" />
         </div>
         <div className="editorial-feature-copy">
           <p className="editorial-eyebrow editorial-eyebrow--dark">Essence / 01</p>
@@ -158,13 +158,13 @@ export default function Home() {
 
       <section className="collection-showcase" id="colecoes" aria-labelledby="collection-showcase-title">
         <div className="collection-showcase-intro">
-          <p className="editorial-eyebrow editorial-eyebrow--dark">Coleções Tempus</p>
+          <p className="editorial-eyebrow editorial-eyebrow--dark">Categorias Tempus</p>
           <h2 id="collection-showcase-title">Conforto para cada<br /><em>ritmo de viver.</em></h2>
           <p>Uma família de peças pensada para acompanhar diferentes maneiras de habitar a casa.</p>
-          <div className="collection-showcase-controls"><span>{String(collectionSlide + 1).padStart(2, "0")} / 06</span><button type="button" onClick={() => scrollCollections(-1)} aria-label="Coleção anterior">←</button><button type="button" onClick={() => scrollCollections(1)} aria-label="Próxima coleção">→</button></div>
+          <div className="collection-showcase-controls"><span>{String(collectionSlide + 1).padStart(2, "0")} / {String(collectionShowcase.length).padStart(2, "0")}</span><button type="button" onClick={() => scrollCollections(-1)} aria-label="Categoria anterior">←</button><button type="button" onClick={() => scrollCollections(1)} aria-label="Próxima categoria">→</button></div>
         </div>
         <div className="collection-showcase-rail" ref={collectionRailRef} onScroll={updateCollectionSlide}>
-          {collectionShowcase.map((collection) => <a className="collection-showcase-slide" href={collection.href} key={collection.name}><div className="collection-showcase-image"><img src={collection.image} alt={collection.alt} /></div><div className="collection-showcase-caption"><p>{collection.number}</p><h3>{collection.name}</h3><span>{collection.description}</span><b>Explorar coleção →</b></div></a>)}
+          {collectionShowcase.map((collection) => <a className="collection-showcase-slide" href={collection.href} key={collection.name}><div className="collection-showcase-image"><img src={collection.image} alt={collection.alt} /></div><div className="collection-showcase-caption"><p>{collection.number}</p><h3>{collection.name}</h3><span>{collection.description}</span><b>Explorar categoria →</b></div></a>)}
         </div>
       </section>
 
@@ -176,16 +176,16 @@ export default function Home() {
         </header>
         <div className="editorial-product-grid">
           <a className="catalogue-product catalogue-product--tall" href="#assistencia">
-            <div className="catalogue-product-image"><img src="/images/products/uniform/5841-mille-3-2.png" alt="Poltrona de madeira clara em fundo branco" /></div>
-            <div className="catalogue-product-meta"><span>01</span><h3>Mille</h3><p>Essence</p><b>↗</b></div>
+            <div className="catalogue-product-image"><img src="/images/products/uniform/3468-san-martin-2.png" alt="Poltrona San Martin em fundo branco" /></div>
+            <div className="catalogue-product-meta"><span>01</span><h3>San Martin</h3><p>Poltronas</p><b>↗</b></div>
           </a>
           <a className="catalogue-product" href="#assistencia">
-            <div className="catalogue-product-image"><img src="/images/products/uniform/7041-athenas.png" alt="Poltrona de couro escuro com estrutura metálica" /></div>
-            <div className="catalogue-product-meta"><span>02</span><h3>Athenas</h3><p>Living</p><b>↗</b></div>
+            <div className="catalogue-product-image"><img src="/images/products/uniform/3476-zara-2.png" alt="Poltrona Zara em fundo branco" /></div>
+            <div className="catalogue-product-meta"><span>02</span><h3>Zara</h3><p>Poltronas</p><b>↗</b></div>
           </a>
           <a className="catalogue-product catalogue-product--wide" href="#assistencia">
-            <div className="catalogue-product-image"><img src="/images/products/uniform/7187-amora.png" alt="Poltrona estofada em tom areia sobre fundo branco" /></div>
-            <div className="catalogue-product-meta"><span>03</span><h3>Amora</h3><p>Lounge</p><b>↗</b></div>
+            <div className="catalogue-product-image"><img src="/images/products/uniform/7032-maya-cor-granizo.png" alt="Poltrona Maya em fundo branco" /></div>
+            <div className="catalogue-product-meta"><span>03</span><h3>Maya</h3><p>Poltronas</p><b>↗</b></div>
           </a>
         </div>
       </section>

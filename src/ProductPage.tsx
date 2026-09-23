@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import TempusLogo from "./imports/Group9";
 import SiteFooter from "./SiteFooter";
+import { loadProductCatalog, type CatalogProduct } from "./productCatalog";
 
 const gallery = [
   ["Frontal", "/images/products/uniform/5841-mille-3-2.png", "Vista frontal da poltrona Mille"],
@@ -14,14 +16,20 @@ const gallery = [
 const highlights = [["Reclínio elétrico", "Um gesto preciso para encontrar a posição de pausa."], ["Encosto independente", "Apoio de costas e pernas ajustados com autonomia."], ["Apoio de cabeça", "Conforto contínuo, mesmo nas pausas mais longas."], ["USB-C integrado", "Energia discreta, sempre ao alcance."], ["Bateria opcional", "Liberdade para compor o ambiente sem cabos aparentes."], ["Base giratória", "Movimento sereno para acompanhar a casa."]];
 
 export default function ProductPage() {
+  const { slug } = useParams();
+  const [product, setProduct] = useState<CatalogProduct | null>(null);
   const [active, setActive] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [material, setMaterial] = useState("Couro Nogueira");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => { const listener = () => setScrolled(window.scrollY > 12); listener(); window.addEventListener("scroll", listener, { passive: true }); return () => window.removeEventListener("scroll", listener); }, []);
+  useEffect(() => { loadProductCatalog().then((products) => setProduct(products.find((item) => item.slug === slug) ?? products.find((item) => item.slug === "mille-3-2") ?? null)); }, [slug]);
   const next = () => setActive((value) => (value + 1) % gallery.length);
   const prev = () => setActive((value) => (value - 1 + gallery.length) % gallery.length);
+  const productName = product?.name ?? "Mille";
+  const productCategory = product?.category ?? "Fulltech";
+  const productImage = product?.image ?? gallery[0][1];
 
   return <main className="page-shell product-page">
     <header className={scrolled ? "minimal-header is-scrolled product-header" : "minimal-header product-header"}>
@@ -31,15 +39,15 @@ export default function ProductPage() {
       <button className="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span /><span /></button>
     </header>
 
-    <section className="product-gallery" aria-label="Galeria da poltrona Mille">
-      <img src={gallery[active][1]} alt={gallery[active][2]} />
+    <section className="product-gallery" aria-label={`Galeria ${productName}`}>
+      <img src={active === 0 ? productImage : gallery[active][1]} alt={active === 0 ? `${productName} Tempus` : gallery[active][2]} />
       <div className="product-gallery-controls"><span>{String(active + 1).padStart(2, "0")} / {String(gallery.length).padStart(2, "0")}</span><p>{gallery[active][0]}</p><button type="button" onClick={prev} aria-label="Imagem anterior">←</button><button type="button" onClick={next} aria-label="Próxima imagem">→</button></div>
       <div className="product-gallery-thumbs">{gallery.map(([label, image], index) => <button type="button" className={active === index ? "is-active" : ""} onClick={() => setActive(index)} key={label}><img src={image} alt="" /><span>{label}</span></button>)}</div>
     </section>
 
     <section className="product-overview" aria-labelledby="product-title">
       <div className="product-overview-intro">
-        <div><p className="editorial-eyebrow editorial-eyebrow--dark">Essence / Poltrona reclinável</p><h1 id="product-title">Mille</h1><p className="product-overview-lead">Conforto desenhado para acompanhar o ritmo de todos os dias.</p><p className="product-overview-copy">Mille combina tecnologia de conforto e proporções serenas em uma poltrona que se adapta naturalmente à vida contemporânea.</p><a className="editorial-action" href="#materiais">Ver acabamentos <span>↗</span></a></div>
+        <div><p className="editorial-eyebrow editorial-eyebrow--dark">{productCategory} / Tempus</p><h1 id="product-title">{productName}</h1><p className="product-overview-lead">Conforto desenhado para acompanhar o ritmo de todos os dias.</p><p className="product-overview-copy">{productName} combina tecnologia de conforto e proporções serenas em uma peça que se adapta naturalmente à vida contemporânea.</p><a className="editorial-action" href="#materiais">Ver acabamentos <span>↗</span></a></div>
       </div>
       <div className="product-overview-features"><p className="editorial-eyebrow editorial-eyebrow--dark">Design em uso / Recursos Mille</p><div>{highlights.map(([title, copy], index) => <article key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div>
     </section>
