@@ -1156,10 +1156,10 @@ h1, h2, h3, h4, h5, h6, p, a, span, small, strong, b, em { font-family: inherit;
 .product-header { position: sticky; }
 .product-gallery { position: relative; min-height: 100svh; overflow: hidden; background: #e8e6df; }
 .product-gallery > img { width: 100%; height: 100svh; object-fit: cover; transition: opacity .45s ease; }
-.product-gallery-controls { position: absolute; right: max(2rem, 4vw); bottom: max(2rem, 4vw); display: flex; align-items: center; gap: .9rem; color: #fff; }
+.product-gallery-controls { position: absolute; right: max(2rem, 4vw); bottom: max(2rem, 4vw); display: flex; align-items: center; gap: .9rem; color: var(--ink); }
 .product-gallery-controls span, .product-gallery-controls p { margin: 0; font-size: var(--font-label); font-weight: 500; letter-spacing: var(--letter-spacing-label); text-transform: uppercase; }
 .product-gallery-controls p { margin-right: 1.3rem; }
-.product-gallery-controls button { width: 2rem; height: 2rem; border: 1px solid rgba(255,255,255,.55); background: transparent; color: #fff; font-size: 1rem; cursor: pointer; }
+.product-gallery-controls button { width: 2rem; height: 2rem; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 1rem; cursor: pointer; }
 .product-gallery-thumbs { position: absolute; left: max(2rem, 4vw); bottom: max(2rem, 4vw); display: flex; gap: .45rem; }
 .product-gallery-thumbs button { width: 3.5rem; height: 2.6rem; padding: 0; border: 1px solid transparent; background: #fff; opacity: .58; overflow: hidden; cursor: pointer; }
 .product-gallery-thumbs button.is-active { border-color: #fff; opacity: 1; }
@@ -1260,6 +1260,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, small, strong, b, em { font-family: inherit;
 .catalog-hero-image::after { content: ""; position: absolute; inset: 0; background: rgba(18,18,16,.42); }
 .catalog-hero-image img { width: 100%; height: 100%; object-fit: cover; }
 .catalog-hero-copy { position: relative; z-index: 1; width: min(100%, 47rem); min-height: 100vh; color: #fff; }
+@media (max-width: 760px) { .catalog-hero-copy { width: 100%; box-sizing: border-box; } }
 .catalog-hero-copy > p:not(.editorial-eyebrow) { color: rgba(255,255,255,.82); }
 .catalog-hero-copy > span, .catalog-header:not(.is-scrolled) .brand span { color: rgba(255,255,255,.75); }
 .catalog-header:not(.is-scrolled) { color: #fff; border-bottom-color: rgba(255,255,255,.25); }
@@ -2348,6 +2349,7 @@ h1, h2, h3, h4, h5, h6,
 /* Representatives recruitment: intentionally distinct from the professional-specifier page. */
 .representatives-page { --rep-dark:#20211e; --rep-pale:#e5e3dc; --rep-lime:#f1f0ea; background:#f1f0ea; }
 .representatives-page .minimal-header:not(.is-scrolled){color:var(--ink);border-bottom-color:var(--line);background:rgba(241,240,234,.96)}
+.representatives-page .minimal-header .brand-logo{filter:brightness(0)}
 .representatives-page .minimal-header:not(.is-scrolled) .quiet-cta span{background:var(--rep-dark);color:#fff}
 .representatives-page .rep-hero{display:grid;grid-template-columns:minmax(400px,.88fr) 1.12fr;height:min(78vh,790px);min-height:600px;background:#f1f0ea;color:var(--ink);overflow:visible}
 .representatives-page .rep-hero:after{display:none}.representatives-page .rep-hero>img{position:relative;grid-column:2;grid-row:1;z-index:0;height:100%;filter:grayscale(1) contrast(.92);object-position:center}
@@ -2860,7 +2862,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, small, strong, b, em, i, label, option {
   p,
   select,
   small,
-  span,
+  span:not(.quiet-cta > span),
   strong,
   textarea
 ),
