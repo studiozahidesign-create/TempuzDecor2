@@ -77,7 +77,7 @@ export default function BlocksLibraryPage() {
     <section className="blocks-intro" aria-labelledby="blocks-title">
       <img src={BANNER_PLACEHOLDER} alt="Espaço reservado para banner" />
       <div className="blocks-intro-shade" />
-      <div className="blocks-intro-copy"><p className="editorial-eyebrow">3D Blocks</p><h1 id="blocks-title">Recursos para projetos profissionais.</h1><p>Download Tempos 3D models for professional architectural projects.</p></div>
+      <div className="blocks-intro-copy"><p className="editorial-eyebrow">3D Blocks</p><h1 id="blocks-title">Recursos para projetos profissionais.</h1><p>Download Tempus 3D models for professional architectural projects.</p></div>
       <a className="blocks-intro-explore" href="#biblioteca">Explore 3D Blocks <span>↓</span></a>
     </section>
 
