@@ -50,10 +50,10 @@ export default function SiteFooter() {
     <footer className="site-footer">
       <div className="footer-intro">
         <a className="brand footer-brand brand-logo footer-logo" href="/" aria-label="Tempus, início"><TempusLogo /></a>
-        <p>Conforto, tecnologia e design para acompanhar o tempo de cada ambiente.</p>
+        <p>Poltronas reclináveis, tecnologias e acabamentos Tempus.</p>
         <div className="footer-contact-actions">
-          <a href="/contato/comercial">Atendimento comercial <span>↗</span></a>
-          <a href="/assistencia">Solicitar assistência <span>↗</span></a>
+          <a href="/contato/comercial">Falar com a equipe <span>↗</span></a>
+          <a href="/assistencia">Consultar assistência <span>↗</span></a>
         </div>
       </div>
 
@@ -70,7 +70,7 @@ export default function SiteFooter() {
 
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Tempus</p>
-        <p className="footer-credit">Design para viver melhor.</p>
+        <p className="footer-credit">Tempus Decor</p>
       </div>
     </footer>
   );
